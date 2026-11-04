@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>RASHEDIN Basic Vocabularies Master — English &amp; Afaan Oromoo vocabulary app</title>
+<meta name="description" content="RASHEDIN Basic Vocabularies Master is a daily vocabulary-learning app with 599 English and Afaan Oromoo words, organized into 60 daily sets of 10 words each, with audio pronunciation and a quiz mode. It was created by Duresa Shumbura, known as Rashedin, in memory of his brother Muussaa. Access costs 30 Ethiopian Birr. Contact: 0990609331.">
+<meta name="author" content="Duresa Shumbura (Rashedin)">
+<meta name="keywords" content="RASHEDIN, Basic Vocabularies Master, Afaan Oromoo, English Afaan Oromoo dictionary, Oromo vocabulary app, Duresa Shumbura, learn Afaan Oromoo, learn English Oromo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://earnest-daifuku-fe2748.netlify.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="RASHEDIN Basic Vocabularies Master">
+<meta property="og:description" content="Learn 599 English and Afaan Oromoo words, 10 a day, with audio pronunciation and quizzes. Created by Duresa Shumbura (Rashedin). 30 Birr to use.">
+<meta property="og:url" content="https://earnest-daifuku-fe2748.netlify.app/">
+<meta property="og:image" content="https://earnest-daifuku-fe2748.netlify.app/splash.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RASHEDIN Basic Vocabularies Master">
+<meta name="twitter:description" content="Learn 599 English and Afaan Oromoo words, 10 a day, with audio pronunciation and quizzes. Created by Duresa Shumbura (Rashedin).">
+<meta name="twitter:image" content="https://earnest-daifuku-fe2748.netlify.app/splash.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "RASHEDIN Basic Vocabularies Master",
+  "alternateName": "RASHEDIN",
+  "applicationCategory": "EducationApplication",
+  "operatingSystem": "Any (Progressive Web App)",
+  "description": "A daily vocabulary-learning app containing 599 English and Afaan Oromoo words, organized into 60 daily sets of 10 words each, with audio pronunciation and a quiz mode to test progress.",
+  "url": "https://earnest-daifuku-fe2748.netlify.app/",
+  "image": "https://earnest-daifuku-fe2748.netlify.app/splash.jpg",
+  "inLanguage": ["en", "om"],
+  "creator": {
+    "@type": "Person",
+    "name": "Duresa Shumbura",
+    "alternateName": "Rashedin"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "30",
+    "priceCurrency": "ETB"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+251990609331",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+<meta name="theme-color" content="#1C3428">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="RASHEDIN Basic Vocabularies Master">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  html, body, #app{ touch-action: manipulation; }
+  /* Photo splash screen */
+  #splashScreen{position:fixed;inset:0;z-index:9999;background:#1C3428;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity .45s ease,visibility .45s ease;}
+  #splashScreen img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;}
+  #splashScreen::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(18,32,25,.05),rgba(18,32,25,.30));pointer-events:none;}
+  #splashScreen.hide{opacity:0;visibility:hidden;pointer-events:none;}
+  @media (prefers-reduced-motion: reduce){#splashScreen{transition:none;}}
+
+  #lockScreen{
+    position:fixed; inset:0; z-index:9998; background:#1C3428;
+    display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  #lockScreen.hidden{ display:none; }
+  .lock-box{ width:100%; max-width:320px; text-align:center; }
+  .lock-box h2{ font-family:'Fraunces',serif; font-size:22px; color:#F8F1DE; margin:0 0 8px; }
+  .lock-box p{ color:#7C9A79; font-size:13px; margin:0 0 22px; }
+  .lock-tagline{ margin:-4px 0 6px !important; font-size:11.5px !important; color:var(--gold) !important; font-weight:700; letter-spacing:0.3px; }
+  .lock-box input{
+    width:100%; text-align:center; letter-spacing:6px; font-size:22px; padding:14px 10px;
+    border-radius:12px; border:1px solid rgba(248,241,222,0.16); background:#122019; color:#F8F1DE;
+    outline:none; font-family:'Karla',sans-serif; box-sizing:border-box;
+  }
+  .lock-box button{
+    width:100%; margin-top:12px; padding:14px; border-radius:12px; border:none;
+    background:#D6A93B; color:#122019; font-weight:700; font-size:14.5px; cursor:pointer;
+  }
+  .lock-box .lock-error{ color:#E7B7A6; font-size:12.5px; margin-top:10px; min-height:16px; }
+  .lock-avatar{
+    width:76px; height:76px; border-radius:50%; object-fit:cover; margin:0 auto 14px; display:block;
+    border:2px solid var(--gold);
+  }
+
+  .dedication-banner{
+    display:flex; align-items:center; gap:12px; background:var(--forest-deep); border:1px solid var(--line);
+    border-radius:14px; padding:12px 14px; margin-bottom:14px;
+  }
+  .dedication-banner img{
+    width:46px; height:46px; border-radius:50%; object-fit:cover; flex:0 0 auto; border:1.5px solid var(--gold);
+  }
+  .dedication-banner .txt{ font-size:11.5px; line-height:1.4; color:var(--sage); }
+  .dedication-banner .txt b{ color:var(--cream); font-family:'Fraunces',serif; font-size:13px; display:block; margin-bottom:2px; }
+
+  .profile-photo{
+    width:76px; height:76px; border-radius:50%; object-fit:cover; margin:0 auto 14px; display:block;
+    border:2px solid var(--gold);
+  }
+  .dedication-note{
+    margin-top:20px; padding:16px; background:var(--forest-deep); border:1px solid var(--line); border-radius:14px;
+    font-size:12.5px; line-height:1.6; color:var(--sage);
+  }
+  .dedication-note b{ color:var(--cream); }
+  .set-card.today{ border-color:var(--gold); box-shadow:0 0 0 1px var(--gold) inset; }
+  .today-badge{
+    font-style:normal; font-size:9.5px; font-weight:700; color:var(--forest-deep); background:var(--gold);
+    border-radius:8px; padding:2px 6px; margin-left:6px; vertical-align:middle;
+  }
+  .day-check{
+    display:inline-block; margin-top:9px; font-size:11px; font-weight:700; padding:5px 10px;
+    border-radius:10px; border:1px solid var(--line); color:var(--sage); cursor:pointer;
+  }
+  .day-check.done{ background:var(--gold); color:var(--forest-deep); border-color:var(--gold); }
+  .gratitude-note{
+    margin-top:14px; padding:16px; background:var(--forest-deep); border:1px solid var(--line); border-radius:14px;
+    font-size:12.5px; line-height:1.6; color:var(--sage);
+  }
+  .gratitude-note b{ color:var(--cream); }
+  .gratitude-note ul{ margin:8px 0 0; padding-left:18px; }
+  .gratitude-note li{ margin-bottom:6px; }
+  .om-translation{ margin-top:10px; padding-top:10px; border-top:1px dashed var(--line); font-style:italic; }
+  .contact-footer{
+    text-align:center; font-size:11px; color:var(--sage); padding:8px 12px; background:var(--forest-deep);
+    border-top:1px solid var(--line);
+  }
+  .contact-footer b{ color:var(--gold); font-weight:700; }
+  .lock-contact{ margin-top:16px; font-size:11px; color:var(--sage); text-align:center; }
+  .lock-contact b{ color:var(--gold); font-weight:700; }
+  .lock-pay{ margin-top:22px; padding:14px; background:rgba(248,241,222,0.05); border:1px solid var(--line); border-radius:14px; text-align:center; }
+  .lock-pay-title{ font-family:'Fraunces',serif; font-size:13.5px; color:var(--cream); font-weight:600; margin-bottom:8px; }
+  .lock-pay-row{ font-size:11.5px; color:var(--sage); line-height:1.5; margin-bottom:6px; }
+  .lock-pay-row b{ color:var(--gold); }
+  .lock-pay-note{ font-size:10.5px; color:var(--sage); font-style:italic; margin-top:4px; }
+
+  .top-students{ margin-bottom:14px; }
+  .top-students-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .top-students-head h3{ font-family:'Fraunces',serif; font-size:14px; color:var(--cream); margin:0; font-weight:600; }
+  .ts-head-links{ display:flex; gap:12px; }
+  .ts-add-link{ font-size:11.5px; color:var(--gold); background:none; border:none; padding:0; }
+  .ts-scroll{ display:flex; gap:12px; overflow-x:auto; padding:2px 2px 6px; }
+  .ts-card{ flex:0 0 auto; width:170px; background:var(--forest); border:1px solid var(--line); border-radius:16px; padding:10px 10px 12px; text-align:left; }
+  .ts-card img{ width:100%; height:170px; border-radius:12px; object-fit:cover; margin:0 0 8px; display:block; border:2px solid var(--gold); }
+  .ts-fallback{ width:100%; height:170px; border-radius:12px; margin:0 0 8px; display:flex; align-items:center; justify-content:center; background:var(--forest-deep); border:2px solid var(--gold); color:var(--gold); font-family:'Fraunces',serif; font-weight:700; font-size:34px; }
+  .ts-card .ts-name{ font-size:13px; font-weight:700; color:var(--cream); }
+  .ts-card .ts-note{ font-size:11px; color:var(--sage); margin-top:3px; line-height:1.35; }
+  .ts-empty{ font-size:11px; color:var(--sage); font-style:italic; }
+
+  .ts-modal-backdrop{ position:fixed; inset:0; background:rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; z-index:80; padding:20px; }
+  .ts-modal{ background:var(--forest); border:1px solid var(--line); border-radius:16px; padding:18px; width:100%; max-width:320px; }
+  .ts-modal h4{ font-family:'Fraunces',serif; font-size:15px; color:var(--cream); margin:0 0 12px; }
+  .ts-modal input, .ts-modal textarea{ width:100%; background:var(--forest-deep); border:1px solid var(--line); border-radius:10px; color:var(--cream); padding:8px 10px; font-size:13px; margin-bottom:8px; font-family:inherit; box-sizing:border-box; }
+  .ts-modal textarea{ resize:vertical; min-height:50px; }
+  .ts-modal .ts-err{ color:var(--clay); font-size:11.5px; margin:-2px 0 8px; min-height:14px; }
+  .ts-modal button.primary{ background:var(--gold); color:#2a2000; border:none; border-radius:10px; padding:10px; width:100%; font-weight:700; font-size:13px; }
+  .ts-modal button.cancel{ background:none; border:none; color:var(--sage); width:100%; margin-top:8px; padding:6px; font-size:12.5px; }
+  .ts-modal button:disabled{ opacity:0.6; }
+  .admin-next-code{ font-family:'Fraunces',serif; font-size:34px; font-weight:700; color:var(--gold); text-align:center; margin:4px 0 8px; letter-spacing:2px; }
+  .admin-next-note{ font-size:11px; color:var(--sage); text-align:center; margin-bottom:14px; line-height:1.4; }
+  .qualify-intro-text{ font-size:13px; color:var(--sage); line-height:1.5; margin:0 0 14px; }
+  .qualify-quiz-modal{ max-width:340px; }
+  .qualify-progress{ text-align:right; font-size:11.5px; color:var(--sage); margin-bottom:10px; }
+  .qualify-eyebrow{ font-size:11px; letter-spacing:0.5px; color:var(--clay); font-weight:700; margin-bottom:6px; }
+  .qualify-word{ font-family:'Fraunces',serif; font-size:24px; color:var(--cream); margin-bottom:16px; }
+  .qualify-choices{ display:flex; flex-direction:column; gap:8px; }
+  .qualify-choice{ background:var(--forest-deep); border:1px solid var(--line); border-radius:10px; color:var(--cream); padding:10px 12px; font-size:13px; text-align:left; font-family:inherit; }
+  .qualify-choice.correct{ border-color:var(--gold); background:rgba(214,169,59,0.18); }
+  .qualify-choice.wrong{ border-color:var(--clay); background:rgba(181,87,60,0.18); }
+  .qualify-choice:disabled{ opacity:0.85; }
+  :root{
+    --ink:#1F2E22;
+    --forest:#1C3428;
+    --forest-deep:#122019;
+    --cream:#F8F1DE;
+    --gold:#D6A93B;
+    --gold-deep:#B4842A;
+    --clay:#B5573C;
+    --sage:#7C9A79;
+    --line: rgba(248,241,222,0.16);
+    --bad:#E7B7A6;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--forest);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(214,169,59,0.10), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(181,87,60,0.12), transparent 50%);
+    color:var(--cream);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    -webkit-font-smoothing:antialiased;
+  }
+  #app{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  .scroll-area{
+    flex:1;
+    padding:24px 20px 130px;
+    overflow-y:auto;
+  }
+  .bottom-fixed{
+    position:fixed;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    width:100%;
+    max-width:480px;
+    z-index:40;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    margin:0;
+    font-weight:600;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:20px;
+  }
+  .brand h1{ font-size:24px; letter-spacing:0.2px; }
+  .brand .sub{ font-size:12px; color:var(--sage); }
+  .header-back-btn{
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:var(--forest-deep);
+    color:var(--cream); font-size:16px; cursor:pointer; margin-right:12px; flex:0 0 auto;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .header-back-btn:active{ transform:scale(0.94); }
+
+  /* AUDIO / SPEAK BUTTONS */
+  .speak-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:22px; height:22px; border-radius:50%; border:none; background:none;
+    color:inherit; opacity:0.7; cursor:pointer; vertical-align:middle; padding:0; margin-left:4px;
+  }
+  .speak-btn:active{ opacity:1; transform:scale(0.92); }
+  .speak-btn svg{ width:14px; height:14px; }
+  .face .speak-btn{ margin-top:10px; width:34px; height:34px; opacity:0.85; }
+  .face .speak-btn svg{ width:18px; height:18px; }
+  .face.front .speak-btn{ color:var(--forest-deep); }
+  .face.back .speak-btn{ color:var(--gold); }
+  .dict-row .en .speak-btn, .dict-row .om .speak-btn{ opacity:0.6; }
+
+  /* BOTTOM NAV */
+  .tabbar{
+    display:flex;
+    border-top:1px solid var(--line);
+    background:var(--forest-deep);
+    padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+  }
+  .tabbar button{
+    flex:1;
+    background:none; border:none; color:var(--sage);
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    font-family:'Karla',sans-serif; font-size:10.5px; font-weight:700;
+    padding:6px 2px; cursor:pointer; letter-spacing:0.2px;
+  }
+  .tabbar button svg{ width:20px; height:20px; }
+  .tabbar button.active{ color:var(--gold); }
+  .tabbar button.active svg{ stroke:var(--gold); }
+
+  .view{ display:flex; flex-direction:column; flex:1; min-height:0; }
+  .hidden{ display:none !important; }
+
+  /* STUDY: set grid */
+  .set-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:6px 0 8px; }
+  .set-card{
+    background:var(--forest-deep); border:1px solid var(--line); border-radius:14px;
+    padding:16px 14px; text-align:left; cursor:pointer; color:var(--cream);
+  }
+  .set-card:active{ transform:scale(0.97); }
+  .set-card.all{ grid-column:1 / -1; background:linear-gradient(135deg, var(--gold-deep), var(--clay)); border:none; }
+  .set-card .n{ font-family:'Fraunces',serif; font-size:21px; display:block; }
+  .set-card .d{ font-size:12px; color:var(--sage); margin-top:4px; display:block; }
+  .set-card.all .d{ color:rgba(248,241,222,0.85); }
+  .set-card .bar{ height:4px; border-radius:2px; background:rgba(248,241,222,0.12); margin-top:10px; overflow:hidden; }
+  .set-card .bar > i{ display:block; height:100%; background:var(--gold); }
+  .set-card.all .bar > i{ background:var(--cream); }
+
+  .home-note{ margin-top:18px; padding-top:18px; font-size:12.5px; color:var(--sage); line-height:1.5; border-top:1px solid var(--line); }
+
+  /* STUDY: card mode */
+  .top-row{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .back-btn{ background:none;border:none;color:var(--cream);font-size:14px; cursor:pointer; opacity:0.8; padding:6px 0; }
+  .progress-track{ flex:1; height:6px; background:rgba(248,241,222,0.14); border-radius:3px; margin:0 14px; overflow:hidden; }
+  .progress-fill{ height:100%; background:var(--gold); border-radius:3px; transition:width .25s ease; }
+  .count-label{ font-size:12px; color:var(--sage); white-space:nowrap; }
+
+  .direction-toggle{
+    align-self:center; display:flex; gap:6px; background:var(--forest-deep); border-radius:20px; padding:4px;
+    margin-bottom:20px; border:1px solid var(--line);
+  }
+  .direction-toggle button{
+    border:none; background:none; color:var(--sage); font-size:12px; padding:6px 14px;
+    border-radius:16px; cursor:pointer; font-weight:700;
+  }
+  .direction-toggle button.active{ background:var(--gold); color:var(--forest-deep); }
+
+  .card-stage{ flex:1; display:flex; align-items:center; justify-content:center; perspective:1200px; min-height:230px; }
+  .flash-card{ width:100%; max-width:340px; height:230px; position:relative; cursor:pointer; }
+  .flash-inner{ width:100%; height:100%; position:relative; transition:transform .45s cubic-bezier(.2,.8,.3,1); transform-style:preserve-3d; }
+  .flash-card.flipped .flash-inner{ transform:rotateY(180deg); }
+  .face{ position:absolute; inset:0; backface-visibility:hidden; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:26px; text-align:center; }
+  .face.front{ background:var(--cream); color:var(--forest-deep); box-shadow:0 18px 38px rgba(0,0,0,0.28); }
+  .face.back{ background:var(--forest-deep); color:var(--cream); border:1.5px solid var(--gold); transform:rotateY(180deg); box-shadow:0 18px 38px rgba(0,0,0,0.35); }
+  .face .eyebrow{ font-size:11px; letter-spacing:0.3px; color:var(--clay); margin-bottom:12px; font-weight:700; }
+  .face.back .eyebrow{ color:var(--gold); }
+  .face .word{ font-family:'Fraunces',serif; font-size:28px; line-height:1.15; word-break:break-word; }
+  .face .hint{ margin-top:12px; font-size:12px; color:#7A6B4E; }
+  .face.back .hint{ color:var(--sage); }
+  .tap-hint{ text-align:center; font-size:11.5px; color:var(--sage); margin-top:12px; }
+
+  .action-row{ display:flex; gap:10px; margin-top:20px; }
+  .action-row button{ flex:1; padding:15px 10px; border-radius:14px; border:none; font-weight:700; font-size:14.5px; cursor:pointer; }
+  .btn-again{ background:rgba(181,87,60,0.18); color:var(--bad); border:1px solid rgba(181,87,60,0.5); }
+  .btn-got-it{ background:var(--gold); color:var(--forest-deep); }
+  .btn-shuffle{ margin-top:10px; background:none; border:1px solid var(--line); color:var(--sage); padding:10px; border-radius:12px; font-size:12.5px; cursor:pointer; }
+
+  .done-wrap{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .done-wrap h2{ font-size:24px; margin-bottom:8px; }
+  .done-wrap p{ color:var(--sage); font-size:14px; max-width:280px; margin:0 0 24px; }
+  .done-actions{ display:flex; flex-direction:column; gap:10px; width:100%; max-width:280px; }
+  .done-actions button{ padding:14px; border-radius:14px; border:none; font-weight:700; cursor:pointer; }
+  .primary-btn{ background:var(--gold); color:var(--forest-deep); }
+  .ghost-btn{ background:none; border:1px solid var(--line); color:var(--cream); }
+
+  /* DICTIONARY */
+  .search-box{
+    display:flex; align-items:center; gap:8px; background:var(--forest-deep); border:1px solid var(--line);
+    border-radius:12px; padding:10px 12px; margin-bottom:14px;
+  }
+  .search-box input{
+    flex:1; background:none; border:none; color:var(--cream); font-size:14px; outline:none; font-family:'Karla',sans-serif;
+  }
+  .search-box input::placeholder{ color:var(--sage); }
+  .chip-row{ display:flex; gap:8px; overflow-x:auto; padding-bottom:10px; margin-bottom:6px; }
+  .chip-row::-webkit-scrollbar{ display:none; }
+  .chip{
+    flex:0 0 auto; padding:7px 14px; border-radius:20px; border:1px solid var(--line); background:var(--forest-deep);
+    color:var(--sage); font-size:12.5px; font-weight:700; cursor:pointer; white-space:nowrap;
+  }
+  .chip.active{ background:var(--gold); color:var(--forest-deep); border-color:var(--gold); }
+  .dict-list{ display:flex; flex-direction:column; gap:8px; padding-bottom:10px; }
+  .dict-row{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:var(--forest-deep); border:1px solid var(--line); border-radius:12px; padding:12px 14px;
+  }
+  .dict-row .en{ font-family:'Fraunces',serif; font-size:15.5px; }
+  .dict-row .om{ font-size:12.5px; color:var(--sage); margin-top:2px; }
+  .dict-row .known-dot{ width:9px; height:9px; border-radius:50%; background:var(--line); flex:0 0 auto; }
+  .dict-row .known-dot.on{ background:var(--gold); }
+  .empty-note{ text-align:center; color:var(--sage); font-size:13px; padding:30px 10px; }
+
+  /* QUIZ */
+  .quiz-setup{ display:flex; flex-direction:column; gap:14px; }
+  .quiz-option-btn{
+    padding:15px; border-radius:14px; border:1px solid var(--line); background:var(--forest-deep);
+    color:var(--cream); text-align:left; cursor:pointer; font-family:'Karla',sans-serif; font-size:14.5px;
+  }
+  .quiz-option-btn:active{ transform:scale(0.98); }
+  .quiz-q-wrap{ flex:1; display:flex; flex-direction:column; }
+  .quiz-prompt{ text-align:center; margin:10px 0 22px; }
+  .quiz-prompt .eyebrow{ font-size:11px; color:var(--clay); font-weight:700; letter-spacing:0.3px; }
+  .quiz-prompt .word{ font-family:'Fraunces',serif; font-size:26px; margin-top:8px; }
+  .quiz-choices{ display:flex; flex-direction:column; gap:10px; }
+  .quiz-choice{
+    padding:15px; border-radius:14px; border:1.5px solid var(--line); background:var(--forest-deep);
+    color:var(--cream); text-align:left; cursor:pointer; font-size:14.5px;
+  }
+  .quiz-choice.correct{ border-color:var(--gold); background:rgba(214,169,59,0.18); }
+  .quiz-choice.wrong{ border-color:var(--clay); background:rgba(181,87,60,0.18); }
+  .quiz-choice[disabled]{ cursor:default; }
+  .quiz-footer{ display:flex; align-items:center; justify-content:space-between; margin-top:16px; font-size:12.5px; color:var(--sage); }
+  .quiz-result{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+  .quiz-score{ font-family:'Fraunces',serif; font-size:44px; color:var(--gold); }
+
+  /* PROFILE */
+  .avatar{
+    width:76px; height:76px; border-radius:50%; background:linear-gradient(135deg, var(--gold-deep), var(--clay));
+    display:flex; align-items:center; justify-content:center; margin:0 auto 14px;
+    font-family:'Fraunces',serif; font-size:28px; color:var(--cream);
+  }
+  .profile-head{ text-align:center; margin-bottom:24px; }
+  .profile-head h2{ font-size:20px; }
+  .profile-head p{ color:var(--sage); font-size:12.5px; margin-top:4px; }
+  .stat-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:22px; }
+  .stat-card{ background:var(--forest-deep); border:1px solid var(--line); border-radius:14px; padding:16px; text-align:center; }
+  .stat-card .num{ font-family:'Fraunces',serif; font-size:26px; color:var(--gold); }
+  .stat-card .lbl{ font-size:11.5px; color:var(--sage); margin-top:4px; }
+  .profile-list{ display:flex; flex-direction:column; gap:8px; }
+  .profile-row{ display:flex; align-items:center; justify-content:space-between; background:var(--forest-deep); border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:13.5px; }
+  .profile-row .lbl{ color:var(--cream); }
+  .profile-row .val{ color:var(--sage); }
+  .danger-btn{
+    margin-top:20px; width:100%; padding:13px; border-radius:14px; border:1px solid rgba(181,87,60,0.5);
+    background:rgba(181,87,60,0.12); color:var(--bad); font-weight:700; cursor:pointer;
+  }
+</style>
+</head>
+<body>
+<div id="splashScreen" aria-label="RASHEDIN Basic Vocabularies Master loading"><img src="splash.jpg" alt="RASHEDIN Basic Vocabularies Master"></div>
+<div id="lockScreen" class="hidden">
+  <div class="lock-box">
+    <img src="profile.jpg" alt="Duresa Shumbura (Rashedin)" class="lock-avatar">
+    <h2>RASHEDIN</h2>
+    <p class="lock-tagline">Basic Vocabularies Master</p>
+    <p>Enter the access code to continue</p>
+    <input type="password" inputmode="numeric" maxlength="6" id="lockInput" placeholder="••••">
+    <button id="lockSubmit">Unlock</button>
+    <div class="lock-error" id="lockError"></div>
+    <div class="lock-pay">
+      <div class="lock-pay-title">30 Birr to use this app</div>
+      <div class="lock-pay-row">CBE account: <b>1000798687097</b><br>(Duresa Shumbura Kediro)</div>
+      <div class="lock-pay-row">Telebirr: <b>0990609331</b></div>
+      <div class="lock-pay-note">Pay, then contact us to get your code.</div>
+    </div>
+    <div class="lock-contact">For more information call us: <b>0990609331</b></div>
+  </div>
+</div>
+<div id="app" style="display:none;">
+  <div class="scroll-area" id="scrollArea">
+
+    <div class="brand">
+      <button class="header-back-btn hidden" id="headerBackBtn" aria-label="Back">&larr;</button>
+      <div>
+        <h1 id="brandTitle">RASHEDIN</h1>
+        <div class="sub" id="brandSub">Basic Vocabularies Master</div>
+      </div>
+    </div>
+
+    <!-- STUDY VIEW -->
+    <div id="studyView" class="view">
+
+      <div id="studyHome">
+        <div class="top-students" id="topStudentsSection">
+          <div class="top-students-head">
+            <h3>Top Students</h3>
+            <div class="ts-head-links">
+              <button class="ts-add-link" id="qualifyLink">🏆 Qualify</button>
+              <button class="ts-add-link" id="tsAddLink">+ Add</button>
+            </div>
+          </div>
+          <div class="ts-scroll" id="tsScroll"><div class="ts-empty">No top students posted yet.</div></div>
+        </div>
+        <div class="dedication-banner">
+          <img src="profile.jpg" alt="Duresa Shumbura (Rashedin)">
+          <div class="txt"><b>Built by Rashedin</b>For everyone learning, everywhere.<br><i>Nama barachuu barbaadu hundaaf.</i></div>
+        </div>
+        <div class="set-grid" id="setGrid"></div>
+        <div class="home-note">10 new words a day. Tap "Day N" to study, then tap "Mark day done" once you've gone through all 10 &mdash; that's your daily goal met. "Got it" cards are remembered across visits.</div>
+      </div>
+
+      <div id="studyCard" class="view hidden">
+        <div class="top-row">
+          <button class="back-btn" id="backBtn">&larr; sets</button>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="count-label" id="countLabel"></div>
+        </div>
+        <div class="direction-toggle">
+          <button id="dirEO" class="active">EN &rarr; OM</button>
+          <button id="dirOE">OM &rarr; EN</button>
+        </div>
+        <div class="card-stage">
+          <div class="flash-card" id="flashCard">
+            <div class="flash-inner">
+              <div class="face front">
+                <div class="eyebrow" id="frontLabel">ENGLISH</div>
+                <div class="word" id="frontWord"></div>
+                <button class="speak-btn" id="frontSpeakBtn" aria-label="Pronounce word" onclick="event.stopPropagation();">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16.5 12a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+                </button>
+                <div class="hint">tap card to reveal</div>
+              </div>
+              <div class="face back">
+                <div class="eyebrow" id="backLabel">AFAAN OROMOO</div>
+                <div class="word" id="backWord"></div>
+                <button class="speak-btn" id="backSpeakBtn" aria-label="Pronounce word" onclick="event.stopPropagation();">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16.5 12a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tap-hint" id="tapHint">1 of 1</div>
+        <div class="action-row">
+          <button class="btn-again" id="againBtn">Still learning</button>
+          <button class="btn-got-it" id="gotItBtn">Got it</button>
+        </div>
+        <button class="btn-shuffle" id="shuffleBtn">Shuffle this day</button>
+      </div>
+
+      <div id="studyDone" class="view hidden">
+        <div class="done-wrap">
+          <h2 id="doneTitle">Day complete</h2>
+          <p id="doneSub">You've been through every card for this day.</p>
+          <div class="done-actions">
+            <button class="primary-btn" id="reviewMissedBtn">Review the ones I missed</button>
+            <button class="ghost-btn" id="restartSetBtn">Go through set again</button>
+            <button class="ghost-btn" id="toHomeBtn">Back to sets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DICTIONARY VIEW -->
+    <div id="dictView" class="view hidden">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C9A79" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="dictSearch" placeholder="Search English or Oromo...">
+      </div>
+      <div class="chip-row" id="dictChips"></div>
+      <div class="dict-list" id="dictList"></div>
+    </div>
+
+    <!-- QUIZ VIEW -->
+    <div id="quizView" class="view hidden">
+      <div id="quizSetup" class="quiz-setup">
+        <h3 style="font-size:16px; margin-bottom:2px;">Choose a day to be tested on</h3>
+        <div class="set-grid" id="quizSetGrid"></div>
+        <button class="quiz-option-btn" id="quizModeToggle">Mode: Multiple choice (tap to switch)</button>
+      </div>
+
+      <div id="quizPlay" class="view hidden">
+        <div class="top-row">
+          <button class="back-btn" id="quizBackBtn">&larr; end quiz</button>
+          <div class="progress-track"><div class="progress-fill" id="quizProgressFill"></div></div>
+          <div class="count-label" id="quizCountLabel"></div>
+        </div>
+        <div class="quiz-q-wrap">
+          <div class="quiz-prompt">
+            <div class="eyebrow" id="quizEyebrow">ENGLISH</div>
+            <div class="word" id="quizWord"></div>
+          </div>
+          <div class="quiz-choices" id="quizChoices"></div>
+        </div>
+      </div>
+
+      <div id="quizResult" class="view hidden">
+        <div class="quiz-result">
+          <div class="quiz-score" id="quizScoreNum">0/0</div>
+          <p style="color:var(--sage); font-size:14px; margin:10px 0 24px;" id="quizScoreNote">Nice work.</p>
+          <div class="done-actions">
+            <button class="primary-btn" id="quizRetryBtn">Try again</button>
+            <button class="ghost-btn" id="quizToSetupBtn">Choose another day</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE VIEW -->
+    <div id="profileView" class="view hidden">
+      <div class="profile-head">
+        <img src="profile.jpg" alt="Duresa Shumbura (Rashedin)" class="profile-photo">
+        <h2>Duresa Shumbura</h2>
+        <p>"Rashedin" &bull; 20 years old &bull; Creator of this app</p>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num" id="statKnown">0</div><div class="lbl">words known</div></div>
+        <div class="stat-card"><div class="num" id="statTotal">598</div><div class="lbl">total words</div></div>
+        <div class="stat-card"><div class="num" id="statSets">0</div><div class="lbl">days mastered</div></div>
+        <div class="stat-card"><div class="num" id="statQuiz">&mdash;</div><div class="lbl">best quiz score</div></div>
+        <div class="stat-card" style="grid-column:1 / -1;"><div class="num" id="statDaysDone">0</div><div class="lbl">days marked accomplished</div></div>
+      </div>
+      <div class="profile-list" id="profileSetList"></div>
+      <div class="dedication-note">
+        <b>Why I built this.</b><br>
+        I'm trying to solve some of the problems I see around me in my country, one small piece at a time &mdash;
+        this dictionary is one of them. It's dedicated to my brother, <b>Muussaa</b>, who passed away in a car accident.
+        We loved each other deeply, and when he was gone, I realized he never belonged only to me &mdash; everyone
+        in our community felt the loss too. That's what pushed me to build something for everyone around me,
+        not just for myself. Every word in here is for him, and for anyone trying to learn, connect, and grow.
+        <div class="om-translation">
+          <b>Maaliif kana hojjadhe.</b><br>
+          Rakkoolee biyya kootti argu keessaa tokko tokko, xinnoo xinnoodhaan furuuf carraaqaan jira &mdash;
+          jechoonni kun tokko isaanii keessaati. Kun obboleessa koo, <b>Muussaa</b>, kan balaa konkolaataatiin
+          lubbuun darbeef kenname. Wal jaalluu guddaa qabna ture; innis yeroo na biraa deemetti, akka inni qofa
+          naaf hin taane hubadhe &mdash; hawaasa keenya keessatti hundinuu gadda dhagahe. Kanatu na kakaase akka
+          waan hawaasa koo hundaaf ta'u ijaaru, kan ana qofaaf hin taane. Jecha as jiru hunda isaaf, akkasumas
+          nama barachuu, walqunnamuu fi guddachuu barbaadu hundaaf kenname.
+        </div>
+      </div>
+      <div class="gratitude-note">
+        <b>Gratitude.</b><br>
+        First of all, my thanks and glory belong to God (Allah), who made everything and everyone comfortable for me to do this.<br>
+        And second, thank you to my family &mdash; especially to my mother, <b>"Zeynaba Hajji."</b><br><br>
+        Thank you to everyone who believed in me, and to all my teachers &mdash; especially:
+        <ul>
+          <li><b>Teacher Tahir</b> &mdash; who taught me ethical values and how to solve the problems around me, deeply, from his heart.</li>
+          <li><b>Teacher Juneydii</b> &mdash; who taught me the fundamentals of IT and computer languages: Python, Java, JavaScript, C++, HTML, and more.</li>
+          <li><b>Teacher Gammada</b> &mdash; who motivated me, over and over, to build something great.</li>
+          <li><b>Teacher A/Razzak</b> &mdash; who taught me IT at Gedab Secondary School.</li>
+        </ul>
+        And to the many other people who shaped me that I can't fully list here &mdash; thank you.
+        <div class="om-translation">
+          <b>Galata.</b><br>
+          Duraan dursee, galanni fi ulfinni kan Waaqayyo (Rabbii) ta'a, kan waan hundaa fi nama hunda naaf mijeesse.<br>
+          Lammaffaa immoo, maatii kootiif, keessumaa haadha kootii <b>"Zeynaba Hajjii"</b> galata guddaa qaba.<br><br>
+          Nama na amanan hundaaf, akkasumas barsiisota koo hundaaf, keessumaa immoo:
+          <ul>
+            <li><b>Barsiisaa Xaahir</b> &mdash; kan safuu fi ogummaa rakkoo naannoo kootii furuu garaa isaatii na barsiise.</li>
+            <li><b>Barsiisaa Juneydii</b> &mdash; kan bu'uura IT fi afaanota kompiitaraa akka Phaayitan, Jaavaa, JavaScript, C++, fi HTML na barsiise.</li>
+            <li><b>Barsiisaa Gammadaa</b> &mdash; kan yeroo hedduu waan guddaa ijaaruuf na kakaasaa ture.</li>
+            <li><b>Barsiisaa A/Razaaq</b> &mdash; kan mana barumsaa qophaa'inaa Gedaabitti IT na barsiise.</li>
+          </ul>
+          Nama biroo hedduu kan as ibsuu hin dandeenye galata guddaa isiniif qaba.
+        </div>
+      </div>
+      <button class="danger-btn" id="resetBtn">Reset all progress</button>
+    </div>
+
+  </div>
+
+  <div class="bottom-fixed">
+    <div class="contact-footer">For more information call us: <b>0990609331</b></div>
+
+    <div class="tabbar">
+      <button class="tab-btn active" data-tab="study">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#7C9A79" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+        Study
+      </button>
+      <button class="tab-btn" data-tab="dict">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#7C9A79" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Dictionary
+      </button>
+      <button class="tab-btn" data-tab="quiz">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#7C9A79" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.4 2.3c-.8.4-1.4 1-1.4 1.9"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Quiz
+      </button>
+      <button class="tab-btn" data-tab="profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#7C9A79" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+        Profile
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="qualifyIntroModal">
+  <div class="ts-modal">
+    <h4>Become a Top Student</h4>
+    <p class="qualify-intro-text">Answer 50 quick questions. Score 45 or higher and you can post yourself to the Top Students list.</p>
+    <button class="primary" id="qualifyStartBtn">Start quiz</button>
+    <button class="cancel" id="qualifyIntroCancel">Cancel</button>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="qualifyQuizModal">
+  <div class="ts-modal qualify-quiz-modal">
+    <div class="qualify-progress"><span id="qualifyProgressLabel">1/50</span></div>
+    <div class="qualify-eyebrow" id="qualifyEyebrow">WHAT DOES THIS MEAN IN AFAAN OROMOO?</div>
+    <div class="qualify-word" id="qualifyWord">word</div>
+    <div class="qualify-choices" id="qualifyChoices"></div>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="qualifyResultModal">
+  <div class="ts-modal">
+    <h4 id="qualifyResultTitle">Quiz finished</h4>
+    <div class="admin-next-code" id="qualifyResultScore">0/50</div>
+    <div class="admin-next-note" id="qualifyResultNote"></div>
+    <button class="primary" id="qualifyContinueBtn">Continue</button>
+    <button class="cancel" id="qualifyResultClose">Close</button>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="adminGateModal">
+  <div class="ts-modal">
+    <h4>Admin</h4>
+    <input type="text" id="adminGateInput" placeholder="Enter admin code">
+    <div class="ts-err" id="adminGateErr"></div>
+    <button class="primary" id="adminGateSubmit">Continue</button>
+    <button class="cancel" id="adminGateCancel">Cancel</button>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="adminPanelModal">
+  <div class="ts-modal">
+    <h4>Next unlock code</h4>
+    <div class="admin-next-code" id="adminNextCode">&mdash;</div>
+    <div class="admin-next-note" id="adminNextNote"></div>
+    <button class="primary" id="adminRefreshBtn">Check again</button>
+    <button class="cancel" id="adminPanelClose">Close</button>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="tsCodeModal">
+  <div class="ts-modal">
+    <h4>Admin code</h4>
+    <input type="text" id="tsCodeInput" placeholder="Enter code">
+    <div class="ts-err" id="tsCodeErr"></div>
+    <button class="primary" id="tsCodeSubmit">Continue</button>
+    <button class="cancel" id="tsCodeCancel">Cancel</button>
+  </div>
+</div>
+
+<div class="ts-modal-backdrop hidden" id="tsFormModal">
+  <div class="ts-modal">
+    <h4>Add top student</h4>
+    <input type="text" id="tsNameInput" placeholder="Student name">
+    <textarea id="tsNoteInput" placeholder="A short note (e.g. 'Finished all 60 days')"></textarea>
+    <input type="file" id="tsPhotoInput" accept="image/*">
+    <div class="ts-err" id="tsFormErr"></div>
+    <button class="primary" id="tsFormSubmit">Post</button>
+    <button class="cancel" id="tsFormCancel">Cancel</button>
+  </div>
+</div>
+
+<script id="vocab-data" type="application/json">[{"id": 1, "set": 1, "en": "hypothesis", "om": "mala dhahuu"}, {"id": 2, "set": 1, "en": "marker", "om": "malattoo"}, {"id": 3, "set": 1, "en": "dress", "om": "uffachuu"}, {"id": 4, "set": 1, "en": "award", "om": "badhaasa"}, {"id": 5, "set": 1, "en": "prosperity", "om": "badhaadhina"}, {"id": 6, "set": 1, "en": "loss/mistake", "om": "badii"}, {"id": 7, "set": 1, "en": "useless", "om": "badduu/fayidan ala"}, {"id": 8, "set": 1, "en": "wise", "om": "beekaa"}, {"id": 9, "set": 1, "en": "independent", "om": "bilisa"}, {"id": 10, "set": 1, "en": "dependent", "om": "hirphattuu / hirkattuu"}, {"id": 11, "set": 1, "en": "type", "om": "Akaakuu/gosa"}, {"id": 12, "set": 1, "en": "dividing", "om": "Qooduu / Hiruu"}, {"id": 13, "set": 1, "en": "recipient", "om": "fudhataa"}, {"id": 14, "set": 1, "en": "hide", "om": "dhoksi"}, {"id": 15, "set": 1, "en": "ugly", "om": "fokkisa"}, {"id": 16, "set": 1, "en": "untidy", "om": "fokkistuu"}, {"id": 17, "set": 1, "en": "adjacent", "om": "kan cinaa jiru"}, {"id": 18, "set": 1, "en": "breast", "om": "Harma"}, {"id": 19, "set": 1, "en": "removal", "om": "buqqisuu"}, {"id": 20, "set": 1, "en": "disregard", "om": "Tuffachuu"}, {"id": 21, "set": 1, "en": "build/install", "om": "jaari"}, {"id": 22, "set": 1, "en": "expected", "om": "Kan eegame"}, {"id": 23, "set": 1, "en": "expect", "om": "Eeguu"}, {"id": 24, "set": 1, "en": "dial", "om": "bilbili"}, {"id": 25, "set": 1, "en": "accordance", "om": "Haala / Akka / Haalumaan"}, {"id": 26, "set": 1, "en": "similar", "om": "walfakkaataa"}, {"id": 27, "set": 1, "en": "mutual", "om": "waliinii / waliigalaa"}, {"id": 28, "set": 1, "en": "consume", "om": "nyaachuu"}, {"id": 29, "set": 1, "en": "large", "om": "guddaa"}, {"id": 30, "set": 1, "en": "feed", "om": "nyaachisuu"}, {"id": 31, "set": 1, "en": "spit", "om": "Tufuu"}, {"id": 32, "set": 1, "en": "click/contact/touch", "om": "Tuquu"}, {"id": 33, "set": 1, "en": "then", "om": "yeroo san"}, {"id": 34, "set": 1, "en": "leisure", "om": "yeroo boqonnaa"}, {"id": 35, "set": 1, "en": "downtime", "om": "yeroo boqonnaa / yeroo dhaabbannaa"}, {"id": 36, "set": 1, "en": "timing", "om": "muldhina yeroo / Haala yeroo"}, {"id": 37, "set": 1, "en": "speeding", "om": "faana ariitiidhaan oofuu / ariitiidhaan deemu"}, {"id": 38, "set": 1, "en": "longtime", "om": "yeroo dheeraa"}, {"id": 39, "set": 1, "en": "recently", "om": "yeroo dhihootti"}, {"id": 40, "set": 1, "en": "revelation/view/vision", "om": "mul'ata"}, {"id": 41, "set": 1, "en": "standalone", "om": "Of danda'aa"}, {"id": 42, "set": 1, "en": "kebele/village", "om": "Ganda"}, {"id": 43, "set": 1, "en": "gender", "om": "saalaa"}, {"id": 44, "set": 1, "en": "source", "om": "madda"}, {"id": 45, "set": 1, "en": "method", "om": "Toftaa/mala"}, {"id": 46, "set": 1, "en": "metaphor", "om": "ceembi'aa / eebila"}, {"id": 47, "set": 1, "en": "justice/law/regulating", "om": "seera"}, {"id": 48, "set": 1, "en": "duty/mandatory/ought/responsibility", "om": "Dirqama"}, {"id": 49, "set": 1, "en": "base", "om": "bu'uura/Hundee"}, {"id": 50, "set": 1, "en": "upon", "om": "Irratti"}, {"id": 51, "set": 1, "en": "through", "om": "keessaan"}, {"id": 52, "set": 1, "en": "shade", "om": "Gaaddiddu/gaaddisa"}, {"id": 53, "set": 1, "en": "fun", "om": "Qoosaa/tapha"}, {"id": 54, "set": 1, "en": "deaf", "om": "Duudaa"}, {"id": 55, "set": 1, "en": "blind", "om": "jaama"}, {"id": 56, "set": 1, "en": "hearing", "om": "dhaga'u/guyya beelama"}, {"id": 57, "set": 1, "en": "heard", "om": "dhagahame"}, {"id": 58, "set": 1, "en": "cripple/limp", "om": "Okkoluu"}, {"id": 59, "set": 1, "en": "burn", "om": "gubachuu / gubbaa"}, {"id": 60, "set": 1, "en": "fever/hot", "om": "gubaa"}, {"id": 61, "set": 1, "en": "sufficient", "om": "gahaa"}, {"id": 62, "set": 1, "en": "jealous", "om": "Inaaffaa"}, {"id": 63, "set": 1, "en": "commonly/together", "om": "walittii"}, {"id": 64, "set": 1, "en": "respectively/successive", "om": "walitti aanee"}, {"id": 65, "set": 1, "en": "confrontation", "om": "walitti bu'uu"}, {"id": 66, "set": 1, "en": "dispute", "om": "walitti bu'iinsa"}, {"id": 67, "set": 1, "en": "mobilization", "om": "Sosochoosuu"}, {"id": 68, "set": 1, "en": "composition", "om": "walitti makamuu"}, {"id": 69, "set": 1, "en": "closely", "om": "walitti maxxanuu"}, {"id": 70, "set": 1, "en": "gathering", "om": "walitti qabuu"}, {"id": 71, "set": 1, "en": "approximate", "om": "walitti dhihoo"}, {"id": 72, "set": 1, "en": "interact/joining/related", "om": "walitti dhufuu"}, {"id": 73, "set": 1, "en": "coalition/integrate/interaction/relations", "om": "walitti dhufeenyaa"}, {"id": 74, "set": 1, "en": "gather", "om": "walitti guuruu"}, {"id": 75, "set": 1, "en": "approximation", "om": "walitti siiksuu"}, {"id": 76, "set": 1, "en": "recommend", "om": "Gorsa / Yaada dhiheessuu"}, {"id": 77, "set": 1, "en": "patience/tolerance", "om": "obsa"}, {"id": 78, "set": 1, "en": "amount", "om": "Hamma/baay'ina"}, {"id": 79, "set": 1, "en": "least", "om": "Isa xiqqaatte / Xiqqaa"}, {"id": 80, "set": 1, "en": "strict", "om": "jabaa"}, {"id": 81, "set": 1, "en": "directly", "om": "Kallattiidhaan"}, {"id": 82, "set": 1, "en": "engagement", "om": "Kaadhimamuu"}, {"id": 83, "set": 1, "en": "send", "om": "Ergi"}, {"id": 84, "set": 1, "en": "borrow", "om": "Ergifachuu"}, {"id": 85, "set": 1, "en": "unless", "om": "yoo ta'uu baate"}, {"id": 86, "set": 1, "en": "fail/fall", "om": "Kufuu"}, {"id": 87, "set": 1, "en": "notice", "om": "Beeksiisa/Yaadannoo"}, {"id": 88, "set": 1, "en": "arrow", "om": "Xiyyaa"}, {"id": 89, "set": 1, "en": "materials", "om": "meeshaalee"}, {"id": 90, "set": 1, "en": "honest/loyal/reliable/steward", "om": "Amanamaa"}, {"id": 91, "set": 1, "en": "consistent/consecutive/consequently", "om": "walitti aansee"}, {"id": 92, "set": 1, "en": "sacrifice", "om": "wareegamu"}, {"id": 93, "set": 1, "en": "apologize/excuse", "om": "dhiifama"}, {"id": 94, "set": 1, "en": "existence", "om": "Jiraachuu / Jireenya"}, {"id": 95, "set": 1, "en": "chaos/disturbing/noise/protest/rebel/revolt/violation/violence", "om": "Jeequmsa"}, {"id": 96, "set": 1, "en": "sense", "om": "Miira / Dhagahamuu"}, {"id": 97, "set": 1, "en": "meantime", "om": "Yeroo giddutti / Hagasitti / Achuumaan"}, {"id": 98, "set": 1, "en": "tear", "om": "Baqaqsuu/Boyuu"}, {"id": 99, "set": 1, "en": "weeping", "om": "boo'uu"}, {"id": 100, "set": 1, "en": "describe/dictate/elaboration/enlightening/explain/illuminate", "om": "Ibsuu"}, {"id": 101, "set": 2, "en": "risky", "om": "Bala kan qabu"}, {"id": 102, "set": 2, "en": "capability/capacity/efforts/intuition/qualification/talent", "om": "Dandeettii / Jabaachuu"}, {"id": 103, "set": 2, "en": "permanent", "om": "Dhaabbataa"}, {"id": 104, "set": 2, "en": "decision", "om": "murtii"}, {"id": 105, "set": 2, "en": "character/emotion/feeling", "om": "Amala / Miira"}, {"id": 106, "set": 2, "en": "barely", "om": "Xiqqoo / Haalaan xiqqoo"}, {"id": 107, "set": 2, "en": "impress", "om": "Hawwachuu"}, {"id": 108, "set": 2, "en": "escape", "om": "baduu/baqachuu/miliquu"}, {"id": 109, "set": 2, "en": "portion/role", "om": "Qooda"}, {"id": 110, "set": 2, "en": "fault", "om": "Balleessaa/dogoggora/Hir'ina"}, {"id": 111, "set": 2, "en": "deficit", "om": "Hir'ina"}, {"id": 112, "set": 2, "en": "aspect/mood/situation", "om": "Haala"}, {"id": 113, "set": 2, "en": "already", "om": "Kanasuma / Dursee"}, {"id": 114, "set": 2, "en": "journey/trip", "om": "Deemsa"}, {"id": 115, "set": 2, "en": "hug/hung/include", "om": "Hammachuu"}, {"id": 116, "set": 2, "en": "hang/undermine", "om": "Fannisuu / Xiqqeessuu"}, {"id": 117, "set": 2, "en": "colleague/companion/fellow/mate/peer", "om": "hiriyaa"}, {"id": 118, "set": 2, "en": "brilliant/concrete/cruise/excellence/firm/forceful/outstanding/tough/vital", "om": "Cimaa"}, {"id": 119, "set": 2, "en": "insult", "om": "Arrabsuu"}, {"id": 120, "set": 2, "en": "desperate/fear", "om": "Abdii kutannoo / Sodaa"}, {"id": 121, "set": 2, "en": "wound", "om": "madaa"}, {"id": 122, "set": 2, "en": "anxiety/horror/panic", "om": "sodaa"}, {"id": 123, "set": 2, "en": "branch/faculty/subdivision", "om": "Damee"}, {"id": 124, "set": 2, "en": "equipment/facilities", "om": "meeshaalee"}, {"id": 125, "set": 2, "en": "commodity/goods/instrument/stuff/tool", "om": "meeshaa"}, {"id": 126, "set": 2, "en": "average/integral/moderate/neutral", "om": "giddu galeessaa"}, {"id": 127, "set": 2, "en": "anger/angry/annoyance/fierce", "om": "Aarii"}, {"id": 128, "set": 2, "en": "accustomed/familiar/popular/prominent/well-known", "om": "Beekamaa"}, {"id": 129, "set": 2, "en": "exist", "om": "Jira"}, {"id": 130, "set": 2, "en": "excrement", "om": "Udaan"}, {"id": 131, "set": 2, "en": "fire", "om": "dhukaasa/Ibidda"}, {"id": 132, "set": 2, "en": "hell", "om": "Aazaaba"}, {"id": 133, "set": 2, "en": "specific", "om": "kan murteeffame"}, {"id": 134, "set": 2, "en": "fixed/limited/specifically", "om": "kan murtaa'e"}, {"id": 135, "set": 2, "en": "disappointed", "om": "Abdii kan kute / Kan aare"}, {"id": 136, "set": 2, "en": "dealer", "om": "Dandeessisaa / Daddabarsaa / Dallaala"}, {"id": 137, "set": 2, "en": "imperial", "om": "kan mootii"}, {"id": 138, "set": 2, "en": "prototype", "om": "Fakkeenya jalqabaa / Muddle"}, {"id": 139, "set": 2, "en": "equivalent", "om": "kan wal gitu"}, {"id": 140, "set": 2, "en": "preferably", "om": "kan wayyu"}, {"id": 141, "set": 2, "en": "intolerable", "om": "kan hin obsamne"}, {"id": 142, "set": 2, "en": "inevitable", "om": "ta'uun isaa waan hin oolle"}, {"id": 143, "set": 2, "en": "immortal", "om": "kan hin duune"}, {"id": 144, "set": 2, "en": "unavailable", "om": "Hinjirree"}, {"id": 145, "set": 2, "en": "envying", "om": "Hinaaffaa"}, {"id": 146, "set": 2, "en": "no wrap", "om": "Hin marin"}, {"id": 147, "set": 2, "en": "deselect", "om": "Haquu / Hin filatin"}, {"id": 148, "set": 2, "en": "comparison", "om": "wal bira qabuu"}, {"id": 149, "set": 2, "en": "compete", "om": "wal dorgomuu"}, {"id": 150, "set": 2, "en": "intact", "om": "Qulqulluu / Kan hin tuqamne"}, {"id": 151, "set": 2, "en": "arrange", "om": "qopheessuu"}, {"id": 152, "set": 2, "en": "divorce", "om": "wal hiikuu"}, {"id": 153, "set": 2, "en": "someday", "om": "gaaftokko"}, {"id": 154, "set": 2, "en": "extent/intent/magnitude/until/up", "om": "Hanga"}, {"id": 155, "set": 2, "en": "amazing/awesome/impressive", "om": "Dinqisiisaa"}, {"id": 156, "set": 2, "en": "photographer", "om": "nama suura kaasu"}, {"id": 157, "set": 2, "en": "entrepreneur", "om": "nama hojii kalaqu"}, {"id": 158, "set": 2, "en": "pioneer", "om": "nama jalqabaa"}, {"id": 159, "set": 2, "en": "estimate/guessing value/predator", "om": "Tilmaama / Adamsituu"}, {"id": 160, "set": 2, "en": "cattle", "om": "Beeyladaa"}, {"id": 161, "set": 2, "en": "yield", "om": "Horata/Callaa"}, {"id": 162, "set": 2, "en": "hen", "om": "lukkuu"}, {"id": 163, "set": 2, "en": "meat", "om": "foon"}, {"id": 164, "set": 2, "en": "accusation", "om": "Himannaa"}, {"id": 165, "set": 2, "en": "expression", "om": "Ibsa / Ibsuu"}, {"id": 166, "set": 2, "en": "framework/structural", "om": "Caasaa"}, {"id": 167, "set": 2, "en": "distinguish/separating", "om": "Adda Qooduu"}, {"id": 168, "set": 2, "en": "detention", "om": "Hidhaa"}, {"id": 169, "set": 2, "en": "classify", "om": "Adda qoodi"}, {"id": 170, "set": 2, "en": "cessation", "om": "Adda kutuu"}, {"id": 171, "set": 2, "en": "breaking", "om": "Adda cituu"}, {"id": 172, "set": 2, "en": "detect", "om": "hubachuu"}, {"id": 173, "set": 2, "en": "diverting/liquidate/separation", "om": "Gara biraatti garagalchuu / Baasuu"}, {"id": 174, "set": 2, "en": "varied", "om": "Adda Adda"}, {"id": 175, "set": 2, "en": "fluid/liquid", "om": "dhangala'aa"}, {"id": 176, "set": 2, "en": "cargo/load", "om": "Fe'umsa"}, {"id": 177, "set": 2, "en": "loan", "om": "liqii"}, {"id": 178, "set": 2, "en": "mandate", "om": "itti gafatamummaa"}, {"id": 179, "set": 2, "en": "boss/commissioner/director/principal", "om": "itti gafatamaa"}, {"id": 180, "set": 2, "en": "approach", "om": "itti dhiyaachuu"}, {"id": 181, "set": 2, "en": "deliberately", "om": "itti yaadamee"}, {"id": 182, "set": 2, "en": "concerned", "om": "itti dhimmuu"}, {"id": 183, "set": 2, "en": "wrap", "om": "Maruu / Uffisuu"}, {"id": 184, "set": 2, "en": "adjust to", "om": "Itti mijeessuu"}, {"id": 185, "set": 2, "en": "cage", "om": "itti cufuu"}, {"id": 186, "set": 2, "en": "confront/cope", "om": "itti bu'uu"}, {"id": 187, "set": 2, "en": "plug-in", "om": "itti suuqii"}, {"id": 188, "set": 2, "en": "resume", "om": "itti fufi"}, {"id": 189, "set": 2, "en": "line/stack", "om": "Tartiiba"}, {"id": 190, "set": 2, "en": "serial/subsequent", "om": "Tartiiban"}, {"id": 191, "set": 2, "en": "sunset", "om": "seensa Aduu"}, {"id": 192, "set": 2, "en": "mattress", "om": "firaashii"}, {"id": 193, "set": 2, "en": "ourselves", "om": "Ofiikeenyaa"}, {"id": 194, "set": 2, "en": "settlement", "om": "Tasgabbaa'uu"}, {"id": 195, "set": 2, "en": "silence", "om": "Tasgabbii"}, {"id": 196, "set": 2, "en": "accidentally", "om": "Tasa / Akka tasaa"}, {"id": 197, "set": 2, "en": "absolutely/sudden", "om": "Guutummatti / Tasa"}, {"id": 198, "set": 2, "en": "actually", "om": "dhugaadhumatti"}, {"id": 199, "set": 2, "en": "auto arrange", "om": "Of qindeessaa"}, {"id": 200, "set": 2, "en": "configure", "om": "Qindeessuu"}, {"id": 201, "set": 3, "en": "piece", "om": "Citaa/muramaa"}, {"id": 202, "set": 3, "en": "decay", "om": "Tortoruu"}, {"id": 203, "set": 3, "en": "suffer", "om": "Gidiraa arguu/miidhamuu"}, {"id": 204, "set": 3, "en": "hence", "om": "Amma irraa qabee/sababa kanaf"}, {"id": 205, "set": 3, "en": "rid", "om": "ari'u"}, {"id": 206, "set": 3, "en": "graveyard", "om": "bakka awwaalaa"}, {"id": 207, "set": 3, "en": "certainly/perfectly", "om": "dhugaattiyyuu"}, {"id": 208, "set": 3, "en": "indeed", "om": "dhugaattuu"}, {"id": 209, "set": 3, "en": "hill/mountain", "om": "gaara/Tulluu"}, {"id": 210, "set": 3, "en": "climb", "om": "ol ba'uu"}, {"id": 211, "set": 3, "en": "pop-up", "om": "Ol bahuu"}, {"id": 212, "set": 3, "en": "steel", "om": "sibiila jabaa"}, {"id": 213, "set": 3, "en": "invasion", "om": "weerara"}, {"id": 214, "set": 3, "en": "sustainable", "om": "turuu kan danda'u"}, {"id": 215, "set": 3, "en": "navy", "om": "humna galaanaa"}, {"id": 216, "set": 3, "en": "ruin", "om": "diiguu/balleessuu/barbadeessuu"}, {"id": 217, "set": 3, "en": "demolish/dismantle", "om": "diiguu"}, {"id": 218, "set": 3, "en": "dismiss", "om": "Balleessuu"}, {"id": 219, "set": 3, "en": "provide", "om": "dhiheessuu/Qopheessuu/kennuu"}, {"id": 220, "set": 3, "en": "prepare/make ready", "om": "Qopheessuu"}, {"id": 221, "set": 3, "en": "give/present", "om": "kennuu"}, {"id": 222, "set": 3, "en": "ash", "om": "Daraaraa / Daaraa"}, {"id": 223, "set": 3, "en": "toast", "om": "Maxxanoo / Kabajaaf dhuguu"}, {"id": 224, "set": 3, "en": "warm", "om": "ho'aa/bulluqaa"}, {"id": 225, "set": 3, "en": "descend", "om": "gad bu'uu/gad dhufuu"}, {"id": 226, "set": 3, "en": "anthem/praise song", "om": "faaruu"}, {"id": 227, "set": 3, "en": "verse", "om": "walaloo/waraabbii macaafa Qulqulluu"}, {"id": 228, "set": 3, "en": "tortoise", "om": "qocaa"}, {"id": 229, "set": 3, "en": "parasite", "om": "maxxantuu"}, {"id": 230, "set": 3, "en": "rotten", "om": "tortoraa"}, {"id": 231, "set": 3, "en": "ill/sick", "om": "dhukkubsataa"}, {"id": 232, "set": 3, "en": "alter", "om": "geeddaruu/jijiiruu"}, {"id": 233, "set": 3, "en": "kick", "om": "dhiituu"}, {"id": 234, "set": 3, "en": "deserve", "om": "kan ta'uuf"}, {"id": 235, "set": 3, "en": "preferable", "om": "kan wayyu"}, {"id": 236, "set": 3, "en": "accessible", "om": "kan argamu"}, {"id": 237, "set": 3, "en": "pleasant/sensation", "om": "kan namatti tolu"}, {"id": 238, "set": 3, "en": "compassion", "om": "garaa laafuu"}, {"id": 239, "set": 3, "en": "fan", "om": "hafarsaa"}, {"id": 240, "set": 3, "en": "far", "om": "fagoo"}, {"id": 241, "set": 3, "en": "spent", "om": "Baay'ee kan ba'e / Baasii kan ta'e"}, {"id": 242, "set": 3, "en": "fib", "om": "kijibuu/sobuu"}, {"id": 243, "set": 3, "en": "tend", "om": "eeguu/kunuunsuu"}, {"id": 244, "set": 3, "en": "courage/enthusiasm", "om": "si'aayina"}, {"id": 245, "set": 3, "en": "slaughter", "om": "gorra'uu/qaluu"}, {"id": 246, "set": 3, "en": "arrest/grip/hold/occupy", "om": "qabuu"}, {"id": 247, "set": 3, "en": "obtain/pose/seize", "om": "qabachuu"}, {"id": 248, "set": 3, "en": "emigrant", "om": "godaantota"}, {"id": 249, "set": 3, "en": "odour/scent/smell/sniff", "om": "foolii"}, {"id": 250, "set": 3, "en": "flavour/scent/smell", "om": "Urgaa"}, {"id": 251, "set": 3, "en": "pour/spill/shed", "om": "Dhangala'uu"}, {"id": 252, "set": 3, "en": "miser/greedy", "om": "Doqna"}, {"id": 253, "set": 3, "en": "miserable", "om": "kan itti hin tole"}, {"id": 254, "set": 3, "en": "conviction/entrust/optimistic", "om": "Amanuu"}, {"id": 255, "set": 3, "en": "admit", "om": "Amanuu (balleessaa)/akka sennuf eeyyamuu"}, {"id": 256, "set": 3, "en": "critics", "om": "qeeqa"}, {"id": 257, "set": 3, "en": "criticize", "om": "Hammeessuu/qeeqaa"}, {"id": 258, "set": 3, "en": "befit", "om": "mijaa'uu/toluu"}, {"id": 259, "set": 3, "en": "quietly", "om": "suutan"}, {"id": 260, "set": 3, "en": "gap/spacing", "om": "Addaan fageenya"}, {"id": 261, "set": 3, "en": "baggage", "om": "Meeshaa karaa fudhatanii deeman"}, {"id": 262, "set": 3, "en": "crap", "om": "Sagaraa / Udaan"}, {"id": 263, "set": 3, "en": "pure", "om": "Calala/Qulqulluu"}, {"id": 264, "set": 3, "en": "bike", "om": "Saaykilii oofuu"}, {"id": 265, "set": 3, "en": "warm", "om": "ho'aa/bulluqaa"}, {"id": 266, "set": 3, "en": "humble", "om": "Gadaalisaa / Gad-qabaa"}, {"id": 267, "set": 3, "en": "snatch", "om": "Butuu/Hatuu"}, {"id": 268, "set": 3, "en": "heal", "om": "fayyuu"}, {"id": 269, "set": 3, "en": "decorate", "om": "Bareechuu"}, {"id": 270, "set": 3, "en": "appear", "om": "mul'achuu/ga'uu/suuta ifa ba'uu/maxxanfamuu kitaabaa/mana murtii dhihaachu"}, {"id": 271, "set": 3, "en": "marvel/miracle/surprise", "om": "Raajii"}, {"id": 272, "set": 3, "en": "lonely", "om": "Kophaa kan ta'e / Kophaalaasuu"}, {"id": 273, "set": 3, "en": "reach/arrive", "om": "ga'uu"}, {"id": 274, "set": 3, "en": "verify/confirm/assure/affirm/improving/prove/ensure/approval", "om": "Mirkaneessuu"}, {"id": 275, "set": 3, "en": "fluent", "om": "Sirriitti haasa'uu fi barreessuu kan danda'u"}, {"id": 276, "set": 3, "en": "grant", "om": "kennuu/hayyamuu/amanuu/waliigaluu"}, {"id": 277, "set": 3, "en": "instead", "om": "bakkasaa"}, {"id": 278, "set": 3, "en": "sharp", "om": "Qara"}, {"id": 279, "set": 3, "en": "blank/naked/sharp/poverty", "om": "Duwwaa / Qullaa / Qara / Deegumsa"}, {"id": 280, "set": 3, "en": "illusive/deceptive", "om": "dagachiisaa"}, {"id": 281, "set": 3, "en": "neglect", "om": "dagachuu/dhiisuu"}, {"id": 282, "set": 3, "en": "abandon/quit/refuse/decline/turndown/withdraw/neglect", "om": "dhiisuu"}, {"id": 283, "set": 3, "en": "rare/once", "om": "Takkatuu"}, {"id": 284, "set": 3, "en": "ignore", "om": "Dhiisuu / Dagachuu"}, {"id": 285, "set": 3, "en": "consist of", "om": "keessaa qabaachuu"}, {"id": 286, "set": 3, "en": "merit/profit", "om": "Bu'aa"}, {"id": 287, "set": 3, "en": "stress", "om": "dhiphina/yaaddoo/dadhabbii/jabeessuu/xiyyeeffannaa addaa kennuu"}, {"id": 288, "set": 3, "en": "strive/attempt", "om": "carraaquu/yaaluu/ijibbaachuu"}, {"id": 289, "set": 3, "en": "blame", "om": "komachuu"}, {"id": 290, "set": 3, "en": "argue/criticizing/persist", "om": "Mormuu"}, {"id": 291, "set": 3, "en": "prefer/proceed", "om": "dursuu"}, {"id": 292, "set": 3, "en": "convince/pursue", "om": "Amansiisuu"}, {"id": 293, "set": 3, "en": "farce/fun/humour/joke", "om": "qoosaa"}, {"id": 294, "set": 3, "en": "mock/joke/trifle", "om": "qoosuu"}, {"id": 295, "set": 3, "en": "considerably/insight/observe", "om": "Ilaaluu"}, {"id": 296, "set": 3, "en": "effort/experiment/therapy/trial", "om": "yaalii"}, {"id": 297, "set": 3, "en": "determine/guess/prediction", "om": "Tilmaamuu"}, {"id": 298, "set": 3, "en": "minor", "om": "gadi aanaa"}, {"id": 299, "set": 3, "en": "reckon", "om": "yaaduu/fudhachuu/beekuu/herreguu"}, {"id": 300, "set": 3, "en": "train", "om": "leenjisuu(loon)/baabura geejjibaa"}, {"id": 301, "set": 4, "en": "abuse/attack/harm/infect/injure/manipulate", "om": "miidhuu"}, {"id": 302, "set": 4, "en": "stealing/theft", "om": "hanna"}, {"id": 303, "set": 4, "en": "unauthorized", "om": "Hayyama malee / Seeraan kan hin eeyyamamne"}, {"id": 304, "set": 4, "en": "threat/suppression/harassment", "om": "roorroo"}, {"id": 305, "set": 4, "en": "patch/repair/maintain", "om": "suphuu"}, {"id": 306, "set": 4, "en": "abbreviate", "om": "gabaabsuu"}, {"id": 307, "set": 4, "en": "audience", "om": "dhaggeeffataa/daaw'ataa"}, {"id": 308, "set": 4, "en": "authentic", "om": "dhugaa kan ta'e"}, {"id": 309, "set": 4, "en": "reliable", "om": "abdachiisaa/amanamaa"}, {"id": 310, "set": 4, "en": "require", "om": "barbaaduu/gaafachuu/ajajuu"}, {"id": 311, "set": 4, "en": "malicious", "om": "haxxee"}, {"id": 312, "set": 4, "en": "deliberate", "om": "Ta'e jedhamee / Kan yaadame"}, {"id": 313, "set": 4, "en": "intention", "om": "yaada/karoora"}, {"id": 314, "set": 4, "en": "hazard/disaster/consequence", "om": "balaa"}, {"id": 315, "set": 4, "en": "devastating", "om": "barbadeessituu"}, {"id": 316, "set": 4, "en": "flame", "om": "arraba ibiddaa"}, {"id": 317, "set": 4, "en": "sensitive", "om": "salphaatti waan miidhamu"}, {"id": 318, "set": 4, "en": "strike", "om": "sodaa/fincila"}, {"id": 319, "set": 4, "en": "vast", "om": "guddaa/bal'aa"}, {"id": 320, "set": 4, "en": "denial", "om": "mormi/ganuu"}, {"id": 321, "set": 4, "en": "worm", "om": "raammoo"}, {"id": 322, "set": 4, "en": "bully", "om": "sossodaachiisuu"}, {"id": 323, "set": 4, "en": "predator", "om": "adamsooyyee"}, {"id": 324, "set": 4, "en": "exploit", "om": "saamuu/qisaasuu"}, {"id": 325, "set": 4, "en": "expert", "om": "aaqila/hayyuu"}, {"id": 326, "set": 4, "en": "impact", "om": "dhibbaa"}, {"id": 327, "set": 4, "en": "pretend", "om": "fakkeessuu"}, {"id": 328, "set": 4, "en": "pupil", "om": "barataa"}, {"id": 329, "set": 4, "en": "corruption", "om": "malaammaltummaa"}, {"id": 330, "set": 4, "en": "disclosure", "om": "saaxil baasuu"}, {"id": 331, "set": 4, "en": "disseminate", "om": "tamsaasuu"}, {"id": 332, "set": 4, "en": "intentional", "om": "beekaa waan hojjatame"}, {"id": 333, "set": 4, "en": "inaccessible", "om": "Kan hin dhaqqabamne"}, {"id": 334, "set": 4, "en": "institution", "om": "dhaabbata"}, {"id": 335, "set": 4, "en": "visualize", "om": "waan tokko sirriitti arguu"}, {"id": 336, "set": 4, "en": "task", "om": "hojii/dalagaa"}, {"id": 337, "set": 4, "en": "encounter", "om": "waan hin yaadnetti ba'uu"}, {"id": 338, "set": 4, "en": "settle", "om": "bakka tokko qubachuu/taa'uu"}, {"id": 339, "set": 4, "en": "involve", "om": "Hirmachuu"}, {"id": 340, "set": 4, "en": "constraint", "om": "gufuu/dhiibbaa cimaa"}, {"id": 341, "set": 4, "en": "satisfy", "om": "quubsuu"}, {"id": 342, "set": 4, "en": "consist", "om": "keessaa qabaachuu/irraa dhufuu"}, {"id": 343, "set": 4, "en": "collaboration", "om": "gamtoomina"}, {"id": 344, "set": 4, "en": "innovation", "om": "argannoo"}, {"id": 345, "set": 4, "en": "carry", "om": "baachuu"}, {"id": 346, "set": 4, "en": "execute", "om": "hojii irra oolchuu"}, {"id": 347, "set": 4, "en": "extend", "om": "dheeressuu/dhisuu/bal'isuu"}, {"id": 348, "set": 4, "en": "unambiguous", "om": "ifa / kan gara biraati hin hiikamne"}, {"id": 349, "set": 4, "en": "instruction", "om": "ajaja/qajeelfama"}, {"id": 350, "set": 4, "en": "precise", "om": "sirriitti kan ibsame/of eeggataa"}, {"id": 351, "set": 4, "en": "sequence", "om": "tartiiba"}, {"id": 352, "set": 4, "en": "concise", "om": "haasaa ykn katabbii gabaabaa"}, {"id": 353, "set": 4, "en": "recent", "om": "kan yeroo dhihoo"}, {"id": 354, "set": 4, "en": "block", "om": "danquu"}, {"id": 355, "set": 4, "en": "reusable", "om": "irra deebi'anii ittii fayyadamun kan danda'amu"}, {"id": 356, "set": 4, "en": "drag", "om": "harkisuu"}, {"id": 357, "set": 4, "en": "drop", "om": "harca'uu/kufuu"}, {"id": 358, "set": 4, "en": "manipulation", "om": "hojjechuu/gara fedhii of irraa namoota oofuu"}, {"id": 359, "set": 4, "en": "scratch", "om": "bocuu/hooquu"}, {"id": 360, "set": 4, "en": "animation", "om": "sochii/sochii fakkinaa"}, {"id": 361, "set": 4, "en": "diagonally", "om": "shaffaxa"}, {"id": 362, "set": 4, "en": "ride", "om": "gulufsiisuu"}, {"id": 363, "set": 4, "en": "crazy/insane/lunatic", "om": "maraataa/maraattuu"}, {"id": 364, "set": 4, "en": "merchant", "om": "daladalaa(ttuu)"}, {"id": 365, "set": 4, "en": "career/endeavour/process/profession/task", "om": "Hojii"}, {"id": 366, "set": 4, "en": "district/province/region", "om": "Aanaa"}, {"id": 367, "set": 4, "en": "declare", "om": "labsuu/beeksisuu/ibsuu"}, {"id": 368, "set": 4, "en": "advertise/notification/publicity", "om": "beeksisuu"}, {"id": 369, "set": 4, "en": "maintain/preservation/reserve/sustain", "om": "Tursiisuu"}, {"id": 370, "set": 4, "en": "destruction", "om": "dhuminsa"}, {"id": 371, "set": 4, "en": "gravel/sand", "om": "Cirracha/maansa"}, {"id": 372, "set": 4, "en": "baffle", "om": "dogoggorsuu"}, {"id": 373, "set": 4, "en": "appropriate/straight", "om": "Sirrii / Qajeelaa"}, {"id": 374, "set": 4, "en": "almighty", "om": "Hunda kan danda'uu/baay'ee guddaa/humna qabeessa"}, {"id": 375, "set": 4, "en": "exquisite", "om": "baay'ee miidhagaa"}, {"id": 376, "set": 4, "en": "satisfaction/glad/fun/ecstasy", "om": "gammachuu"}, {"id": 377, "set": 4, "en": "excruciating", "om": "baay'ee gadhee/kan nama dhukkubu"}, {"id": 378, "set": 4, "en": "guarantor/testimony/collateral/reference/witness", "om": "wabii"}, {"id": 379, "set": 4, "en": "certificate/witness/proof", "om": "ragaa"}, {"id": 380, "set": 4, "en": "hijack/mute", "om": "Ukkaamsuu"}, {"id": 381, "set": 4, "en": "enrolment/register", "om": "Galmeessuu"}, {"id": 382, "set": 4, "en": "complete/fill/full", "om": "guutuu"}, {"id": 383, "set": 4, "en": "forum/platform", "om": "waltajjii"}, {"id": 384, "set": 4, "en": "corner/rafter/plank", "om": "Siqsuu / Dagalee / Pembe"}, {"id": 385, "set": 4, "en": "distant/far/farthest/remote", "om": "fagoo"}, {"id": 386, "set": 4, "en": "accurately/actively/certainly/correctly/extreme/fairly/firmly/highly/properly/radical/seriously", "om": "Sirriitti"}, {"id": 387, "set": 4, "en": "attraction/impress", "om": "Hawwachuu"}, {"id": 388, "set": 4, "en": "express", "om": "Ibsuu / Ariifachiisaa"}, {"id": 389, "set": 4, "en": "estimate/expect/predator", "om": "Tilmaama"}, {"id": 390, "set": 4, "en": "version", "om": "Fooyya'aa"}, {"id": 391, "set": 4, "en": "forehead/odd/rather/special/unique", "om": "Adda / Addatti"}, {"id": 392, "set": 4, "en": "clever/subtle/wise", "om": "Abshaala / Qaruutee"}, {"id": 393, "set": 4, "en": "erase", "om": "Haqi"}, {"id": 394, "set": 4, "en": "affair/case/issue/matter/subject", "om": "dhimma"}, {"id": 395, "set": 4, "en": "reject/abandon/discard/dump", "om": "Gati"}, {"id": 396, "set": 4, "en": "pride/proud/conceit", "om": "Boona"}, {"id": 397, "set": 4, "en": "imitate/pretend/replication", "om": "Fakkeessuu"}, {"id": 398, "set": 4, "en": "encourage", "om": "Jajjabeessuu"}, {"id": 399, "set": 4, "en": "application/enquiry/inquiry/request", "om": "Gaaffii"}, {"id": 400, "set": 4, "en": "fate/fortunate/luck/opportunity/possibility", "om": "Carraa"}, {"id": 401, "set": 5, "en": "exclusion", "om": "Adda kan ta'e"}, {"id": 402, "set": 5, "en": "expected", "om": "Kan eegame"}, {"id": 403, "set": 5, "en": "violate", "om": "Cabsuu"}, {"id": 404, "set": 5, "en": "ladder", "om": "yaabbannoo"}, {"id": 405, "set": 5, "en": "misuse", "om": "sirritii itti fayyadamu dhabu"}, {"id": 406, "set": 5, "en": "primarily", "om": "caalaatti"}, {"id": 407, "set": 5, "en": "endorsed", "om": "deggeruu"}, {"id": 408, "set": 5, "en": "prescribe", "om": "ajajuu"}, {"id": 409, "set": 5, "en": "curb", "om": "ittisu"}, {"id": 410, "set": 5, "en": "prevalence", "om": "tamsa'ina"}, {"id": 411, "set": 5, "en": "absence", "om": "Argamuu dhabuu"}, {"id": 412, "set": 5, "en": "trait", "om": "Amala"}, {"id": 413, "set": 5, "en": "reck", "om": "Qayyabachuu / Xiyyeeffachuu"}, {"id": 414, "set": 5, "en": "frustrated", "om": "Abdii kan kute"}, {"id": 415, "set": 5, "en": "worthwhile", "om": "faayidaa qabeessa"}, {"id": 416, "set": 5, "en": "stable", "om": "Dhaabbataa"}, {"id": 417, "set": 5, "en": "coexist", "om": "wajjin jirachuu"}, {"id": 418, "set": 5, "en": "pillar", "om": "Utubaa"}, {"id": 419, "set": 5, "en": "despite", "om": "ta'ulle"}, {"id": 420, "set": 5, "en": "bedrock", "om": "seera bu'uuraa"}, {"id": 421, "set": 5, "en": "seek", "om": "barbaaduu/gaafachuu"}, {"id": 422, "set": 5, "en": "array", "om": "Tarree / Tarreessuu"}, {"id": 423, "set": 5, "en": "mental", "om": "kan sammuu"}, {"id": 424, "set": 5, "en": "eliminate", "om": "Dhabamsisuu"}, {"id": 425, "set": 5, "en": "mirror", "om": "Daawwitii"}, {"id": 426, "set": 5, "en": "evaluate", "om": "Xiinxaluu"}, {"id": 427, "set": 5, "en": "myths", "om": "himtee ykn afoola"}, {"id": 428, "set": 5, "en": "constitute", "om": "kan of keessattii qabatu"}, {"id": 429, "set": 5, "en": "identity", "om": "wal fakkaachuu/eenyumma"}, {"id": 430, "set": 5, "en": "manner", "om": "Amala/haala"}, {"id": 431, "set": 5, "en": "heterogeneous", "om": "wal makaa"}, {"id": 432, "set": 5, "en": "prominent", "om": "Ulfina qabeessa"}, {"id": 433, "set": 5, "en": "exhaustion", "om": "dadhabbii"}, {"id": 434, "set": 5, "en": "blend", "om": "waliitti makuu"}, {"id": 435, "set": 5, "en": "maiden", "om": "Shamarran"}, {"id": 436, "set": 5, "en": "instance", "om": "Fakkeenya"}, {"id": 437, "set": 5, "en": "perspective", "om": "Ilaalcha"}, {"id": 438, "set": 5, "en": "implication", "om": "Agarsisaa"}, {"id": 439, "set": 5, "en": "expertise", "om": "Ogeessaa"}, {"id": 440, "set": 5, "en": "competence", "om": "Ga'umsa"}, {"id": 441, "set": 5, "en": "worst", "om": "baay'ee gadhee"}, {"id": 442, "set": 5, "en": "sink", "om": "gad lixuu(waan dhangala'aa keessa)"}, {"id": 443, "set": 5, "en": "worth", "om": "gatii/qabeenyaa gatii baadu"}, {"id": 444, "set": 5, "en": "sew/make sieves/suck", "om": "hodhuu"}, {"id": 445, "set": 5, "en": "suckle", "om": "hoosisuu"}, {"id": 446, "set": 5, "en": "respond", "om": "deebii kennuu"}, {"id": 447, "set": 5, "en": "presence", "om": "bakka tokkotti argamuu"}, {"id": 448, "set": 5, "en": "outlooks", "om": "Ilaalcha"}, {"id": 449, "set": 5, "en": "sharpness", "om": "Qarama"}, {"id": 450, "set": 5, "en": "utilize", "om": "faayidaa irra oolchuu"}, {"id": 451, "set": 5, "en": "awareness", "om": "Hubannoo"}, {"id": 452, "set": 5, "en": "violence", "om": "Jeequmsa"}, {"id": 453, "set": 5, "en": "treat", "om": "Yaaluu / Keessummeessuu"}, {"id": 454, "set": 5, "en": "degrade", "om": "Salphisuu"}, {"id": 455, "set": 5, "en": "plat", "om": "Palaatii / Pilootii"}, {"id": 456, "set": 5, "en": "intellectual", "om": "hayyuu"}, {"id": 457, "set": 5, "en": "career", "om": "Ogumma"}, {"id": 458, "set": 5, "en": "combine", "om": "makuu"}, {"id": 459, "set": 5, "en": "soft", "om": "laafaa"}, {"id": 460, "set": 5, "en": "ample", "om": "ga'aa ykn isa olitti"}, {"id": 461, "set": 5, "en": "negotiation", "om": "mariif ta'uu"}, {"id": 462, "set": 5, "en": "respond", "om": "deebii kennuu"}, {"id": 463, "set": 5, "en": "prevention", "om": "dhorkii"}, {"id": 464, "set": 5, "en": "intervention", "om": "gidduu seenuu"}, {"id": 465, "set": 5, "en": "dig", "om": "soquu/qotuu"}, {"id": 466, "set": 5, "en": "reflective", "om": "ifa kan calaqqisu/gad fageessee kan yaadu"}, {"id": 467, "set": 5, "en": "fair", "om": "Qixxeetti ilaaluu"}, {"id": 468, "set": 5, "en": "disposition", "om": "amalaa fi haala uumamaa nama"}, {"id": 469, "set": 5, "en": "inevitable", "om": "ta'uun isaa waan hin oolle"}, {"id": 470, "set": 5, "en": "ultimately", "om": "dhuma irratti"}, {"id": 471, "set": 5, "en": "cognitive", "om": "Sammuudhaan kan qabatamu / Yaadaa"}, {"id": 472, "set": 5, "en": "mental", "om": "kan sammuu"}, {"id": 473, "set": 5, "en": "bondage", "om": "garbummaa"}, {"id": 474, "set": 5, "en": "proclaim", "om": "labsuu"}, {"id": 475, "set": 5, "en": "contrast", "om": "Garagaleenya / Wal bira qabuu"}, {"id": 476, "set": 5, "en": "arbitrary", "om": "Abbaa irree"}, {"id": 477, "set": 5, "en": "consolidate", "om": "jajjabeessuu/onnachiisuu"}, {"id": 478, "set": 5, "en": "convention", "om": "waliigaltee"}, {"id": 479, "set": 5, "en": "amendment", "om": "jijjiirama xinnoo(sanadii irra)"}, {"id": 480, "set": 5, "en": "rigid", "om": "mata jabeessa/kan hin dadachanee"}, {"id": 481, "set": 5, "en": "flexible", "om": "laafaa/salphaatti kan dadacha'uu"}, {"id": 482, "set": 5, "en": "legislative", "om": "Seera tumtuu"}, {"id": 483, "set": 5, "en": "supreme", "om": "Ol'aanaa"}, {"id": 484, "set": 5, "en": "consent", "om": "waliigalu/hayyemu"}, {"id": 485, "set": 5, "en": "assign", "om": "ramaduu"}, {"id": 486, "set": 5, "en": "executive", "om": "Qaama murtii kennuu"}, {"id": 487, "set": 5, "en": "judiciary", "om": "Qaama haqaa"}, {"id": 488, "set": 5, "en": "implies", "om": "Mul'isa / Agarsiisa"}, {"id": 489, "set": 5, "en": "inviolable", "om": "kan hin diigamne"}, {"id": 490, "set": 5, "en": "inalienable", "om": "kan hin mulqamne"}, {"id": 491, "set": 5, "en": "liberty", "om": "Bilisummaa"}, {"id": 492, "set": 5, "en": "abuse", "om": "Midhuu"}, {"id": 493, "set": 5, "en": "superior", "om": "kan caala/Ol'aanaa"}, {"id": 494, "set": 5, "en": "inferior", "om": "kan gad/gad aanaa"}, {"id": 495, "set": 5, "en": "manifestation", "om": "kan agarsisu, mul'isu, Ibsu"}, {"id": 496, "set": 5, "en": "situate", "om": "hundeessuu"}, {"id": 497, "set": 5, "en": "proximity", "om": "dhiheenya"}, {"id": 498, "set": 5, "en": "accommodation", "om": "walta'insa"}, {"id": 499, "set": 5, "en": "assume", "om": "yaaduu/tilmaamuu"}, {"id": 500, "set": 5, "en": "intend", "om": "karoorfachuu ykn yaaduu"}, {"id": 501, "set": 6, "en": "notion", "om": "yaada amantii"}, {"id": 502, "set": 6, "en": "agent", "om": "wakiila"}, {"id": 503, "set": 6, "en": "forefront", "om": "kallacha"}, {"id": 504, "set": 6, "en": "incorporating", "om": "Hammachuu"}, {"id": 505, "set": 6, "en": "fragmentation", "om": "Caccabsuu"}, {"id": 506, "set": 6, "en": "foster", "om": "Guddisuu / Guddisan"}, {"id": 507, "set": 6, "en": "dominance", "om": "To'onnaa jala galchuu"}, {"id": 508, "set": 6, "en": "myths", "om": "himtee ykn afoola"}, {"id": 509, "set": 6, "en": "rather", "om": "caalaatti/irra/mannaa"}, {"id": 510, "set": 6, "en": "ensuring", "om": "Mirkaneessuu"}, {"id": 511, "set": 6, "en": "lay", "om": "Ciibsuu/irra buusuu"}, {"id": 512, "set": 6, "en": "slander", "om": "maqaa namaa balleessuu"}, {"id": 513, "set": 6, "en": "fraud", "om": "waliin dha'a"}, {"id": 514, "set": 6, "en": "virtue", "om": "naamusa qabeessumma"}, {"id": 515, "set": 6, "en": "prominence", "om": "Beekamummaa / Ulfina"}, {"id": 516, "set": 6, "en": "inflation", "om": "Qaala'oo"}, {"id": 517, "set": 6, "en": "explosion", "om": "dhohiinsa"}, {"id": 518, "set": 6, "en": "allocation", "om": "ramaadi"}, {"id": 519, "set": 6, "en": "attain", "om": "argachuu"}, {"id": 520, "set": 6, "en": "fulfilment", "om": "wadaa eguu"}, {"id": 521, "set": 6, "en": "interpret", "om": "Hiikuu"}, {"id": 522, "set": 6, "en": "extensively", "om": "Bal'inaan / Haala bal'aan"}, {"id": 523, "set": 6, "en": "procedures", "om": "sirnoota"}, {"id": 524, "set": 6, "en": "scope", "om": "Bal'ina"}, {"id": 525, "set": 6, "en": "theme", "om": "dhamsa"}, {"id": 526, "set": 6, "en": "emerge", "om": "mul'achuu"}, {"id": 527, "set": 6, "en": "firm", "om": "faabrikaa"}, {"id": 528, "set": 6, "en": "household", "om": "mana tokko"}, {"id": 529, "set": 6, "en": "associated", "om": "kan michome"}, {"id": 530, "set": 6, "en": "aggregate", "om": "walumagalattii"}, {"id": 531, "set": 6, "en": "consequence", "om": "balaa"}, {"id": 532, "set": 6, "en": "among", "om": "keessaa"}, {"id": 533, "set": 6, "en": "trend", "om": "Adeemsa"}, {"id": 534, "set": 6, "en": "valid", "om": "Fudhatama kan qabu / Sirrii"}, {"id": 535, "set": 6, "en": "inductive", "om": "Gara waliigalaatti kan geessu"}, {"id": 536, "set": 6, "en": "proceed", "om": "dursuu"}, {"id": 537, "set": 6, "en": "variable", "om": "Jijjiiramaa"}, {"id": 538, "set": 6, "en": "investigate", "om": "Qorachuu"}, {"id": 539, "set": 6, "en": "numerous", "om": "Hedduu"}, {"id": 540, "set": 6, "en": "fluctuate", "om": "kan gagaragalu"}, {"id": 541, "set": 6, "en": "concussion", "om": "miidhamuu sammuu"}, {"id": 542, "set": 6, "en": "involve", "om": "Hirmachuu"}, {"id": 543, "set": 6, "en": "harvest", "om": "Sassaabuu"}, {"id": 544, "set": 6, "en": "associate", "om": "firoomsi"}, {"id": 545, "set": 6, "en": "gross", "om": "waligaala"}, {"id": 546, "set": 6, "en": "utility", "om": "tajaajila"}, {"id": 547, "set": 6, "en": "convert", "om": "Jijjiiruu"}, {"id": 548, "set": 6, "en": "tangible", "om": "Qabatamaa"}, {"id": 549, "set": 6, "en": "insurance", "om": "Wabii / Inshuuraansii"}, {"id": 550, "set": 6, "en": "coverage", "om": "facaatii"}, {"id": 551, "set": 6, "en": "consultant", "om": "Namagorsa"}, {"id": 552, "set": 6, "en": "inspect", "om": "qorachuu"}, {"id": 553, "set": 6, "en": "arrange", "om": "qopheessuu"}, {"id": 554, "set": 6, "en": "marginal", "om": "baay'ee xinnoo"}, {"id": 555, "set": 6, "en": "entire", "om": "guutuumaatti"}, {"id": 556, "set": 6, "en": "extra", "om": "dabalata"}, {"id": 557, "set": 6, "en": "expenditure", "om": "baasii"}, {"id": 558, "set": 6, "en": "fuel", "om": "boba'aa"}, {"id": 559, "set": 6, "en": "sieve", "om": "gingilcha"}, {"id": 560, "set": 6, "en": "rent", "om": "kiraayii"}, {"id": 561, "set": 6, "en": "estimate", "om": "shallaguu/tilmaamuu"}, {"id": 562, "set": 6, "en": "obvious", "om": "Ifa"}, {"id": 563, "set": 6, "en": "distinctive", "om": "kan adda ta'e"}, {"id": 564, "set": 6, "en": "rape", "om": "Gudeeduu"}, {"id": 565, "set": 6, "en": "assault", "om": "Haleellaa"}, {"id": 566, "set": 6, "en": "devote/commitment", "om": "of kennuu"}, {"id": 567, "set": 6, "en": "enhancing", "om": "Gargaaruu"}, {"id": 568, "set": 6, "en": "verbal", "om": "Afaaniin"}, {"id": 569, "set": 6, "en": "participate", "om": "Hirmaannaa"}, {"id": 570, "set": 6, "en": "prescription", "om": "Ajajamuu"}, {"id": 571, "set": 6, "en": "adoption", "om": "guddifachaa fudhachuu"}, {"id": 572, "set": 6, "en": "inhabit", "om": "jiraachuu(bakka tokko)"}, {"id": 573, "set": 6, "en": "inner", "om": "kan keessaa/kan wiirtuu"}, {"id": 574, "set": 6, "en": "disappear", "om": "baduu"}, {"id": 575, "set": 6, "en": "drawer", "om": "nama cheekii barreessu/fakkii kaasu"}, {"id": 576, "set": 6, "en": "rely", "om": "Abdachuu/amanuu"}, {"id": 577, "set": 6, "en": "retrieve", "om": "Iddoo issatti deebisuu/fooyyessuu"}, {"id": 578, "set": 6, "en": "detect", "om": "hubachuu"}, {"id": 579, "set": 6, "en": "explore", "om": "Qorachuu"}, {"id": 580, "set": 6, "en": "assign", "om": "ramaduu"}, {"id": 581, "set": 6, "en": "partition", "om": "Gargar qooduu / Qaama hiruu"}, {"id": 582, "set": 6, "en": "insert", "om": "gidduu suuquu"}, {"id": 583, "set": 6, "en": "extension", "om": "guddisuu"}, {"id": 584, "set": 6, "en": "compute", "om": "herreguu"}, {"id": 585, "set": 6, "en": "appreciation", "om": "dinqisifannaa/dabalata gatii"}, {"id": 586, "set": 6, "en": "quiet", "om": "callisaa"}, {"id": 587, "set": 6, "en": "rumour", "om": "jette-jette"}, {"id": 588, "set": 6, "en": "trail", "om": "suuta tirachuu/faana/kottee"}, {"id": 589, "set": 6, "en": "grave", "om": "awwaala/ulfaataa/rakkisaa"}, {"id": 590, "set": 6, "en": "crawl", "om": "daa'imuu/shunququu/lo'uu"}, {"id": 591, "set": 6, "en": "defend", "om": "ittisuu/ofirraa eeguu/falmuu"}, {"id": 592, "set": 6, "en": "accompany", "om": "faana deemuu"}, {"id": 593, "set": 6, "en": "resurrection", "om": "du'aa ka'uu"}, {"id": 594, "set": 6, "en": "mad/crazy", "om": "maraatuu"}, {"id": 595, "set": 6, "en": "pick", "om": "funaanuu/filuu"}, {"id": 596, "set": 6, "en": "rub/chafe", "om": "sukkuumuu"}, {"id": 597, "set": 6, "en": "ink", "om": "halluu/qalama"}, {"id": 598, "set": 6, "en": "fiber", "om": "fo'aa/kirrii/amala(jabaa)"}, {"id": 599, "set": 60, "en": "item", "om": "waan tokko / meeshaa"}]</script>
+<script>
+(function(){
+  const VOCAB = JSON.parse(document.getElementById('vocab-data').textContent);
+  // Regroup into daily sets of exactly 10 words each ("Day 1", "Day 2", ...)
+  VOCAB.forEach((v, i) => { v.set = Math.floor(i/10) + 1; });
+  const SETS = [...new Set(VOCAB.map(v => v.set))].sort((a,b) => a-b);
+  const STORAGE_KEY = 'jechoota-known-ids';
+  const QUIZ_KEY = 'jechoota-best-quiz';
+  const DAYS_DONE_KEY = 'rashedin-days-done';
+  const START_DATE_KEY = 'rashedin-start-date';
+
+  let knownIds = new Set();
+  let bestQuiz = {}; // {setKey: {score,total}}
+
+  /* ---------- shared helpers ---------- */
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i=a.length-1;i>0;i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+    return a;
+  }
+  function wordsForSet(setNum){
+    return setNum === 'all' ? VOCAB : VOCAB.filter(v => v.set === setNum);
+  }
+
+  /* ---------- daily schedule / deadlines ---------- */
+  function todayStr(){
+    const d = new Date();
+    return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+  }
+  function getStartDate(){
+    let s = null;
+    try{ s = localStorage.getItem(START_DATE_KEY); }catch(e){}
+    if(!s){
+      s = todayStr();
+      try{ localStorage.setItem(START_DATE_KEY, s); }catch(e){}
+    }
+    return s;
+  }
+  function currentDayNumber(){
+    const [sy,sm,sd] = getStartDate().split('-').map(Number);
+    const start = new Date(sy, sm-1, sd);
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const diffDays = Math.round((today - start) / 86400000);
+    return Math.min(Math.max(diffDays + 1, 1), SETS.length);
+  }
+  function loadDaysDone(){
+    try{ return JSON.parse(localStorage.getItem(DAYS_DONE_KEY)) || {}; }catch(e){ return {}; }
+  }
+  let daysDone = loadDaysDone();
+  function saveDaysDone(){ try{ localStorage.setItem(DAYS_DONE_KEY, JSON.stringify(daysDone)); }catch(e){} }
+  function isDayDone(n){ return !!daysDone[n]; }
+  function toggleDayDone(n){
+    if(daysDone[n]) delete daysDone[n]; else daysDone[n] = todayStr();
+    saveDaysDone();
+  }
+
+  /* ---------- audio pronunciation ---------- */
+  const SPEAK_ICON = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16.5 12a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>';
+  let voicesReady = [];
+  function loadVoices(){ try{ voicesReady = window.speechSynthesis.getVoices(); }catch(e){} }
+  if('speechSynthesis' in window){
+    loadVoices();
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+  }
+  function pickVoice(lang){
+    // Try an exact/partial match; browsers rarely ship a real Oromo voice,
+    // so Oromo words fall back to the closest generic voice available.
+    const exact = voicesReady.find(v => v.lang && v.lang.toLowerCase() === lang.toLowerCase());
+    if(exact) return exact;
+    const prefix = lang.split('-')[0].toLowerCase();
+    return voicesReady.find(v => v.lang && v.lang.toLowerCase().startsWith(prefix)) || null;
+  }
+  function speak(text, lang){
+    if(!text || !('speechSynthesis' in window)) return;
+    try{
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      u.rate = 0.85;
+      const v = pickVoice(lang);
+      if(v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    }catch(e){}
+  }
+  async function loadAll(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) knownIds = new Set(JSON.parse(raw));
+    }catch(e){}
+    try{
+      const raw2 = localStorage.getItem(QUIZ_KEY);
+      if(raw2) bestQuiz = JSON.parse(raw2);
+    }catch(e){}
+  }
+  async function saveKnown(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(knownIds))); }catch(e){}
+  }
+  async function saveQuiz(){
+    try{ localStorage.setItem(QUIZ_KEY, JSON.stringify(bestQuiz)); }catch(e){}
+  }
+
+  /* ---------- TAB SWITCHING ---------- */
+  const views = { study: document.getElementById('studyView'), dict: document.getElementById('dictView'),
+    quiz: document.getElementById('quizView'), profile: document.getElementById('profileView') };
+  const headerBackBtn = document.getElementById('headerBackBtn');
+  let activeTab = 'study';
+
+  function goToTab(tabName){
+    const btn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    Object.values(views).forEach(v=>v.classList.add('hidden'));
+    views[tabName].classList.remove('hidden');
+    document.getElementById('scrollArea').scrollTop = 0;
+    activeTab = tabName;
+    headerBackBtn.classList.toggle('hidden', tabName === 'study');
+    if(tabName === 'dict') renderDict();
+    if(tabName === 'quiz') renderQuizSetup();
+    if(tabName === 'profile') renderProfile();
+  }
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const enteringDeeper = btn.dataset.tab !== 'study' && activeTab === 'study';
+      goToTab(btn.dataset.tab);
+      if(enteringDeeper) pushBackState();
+    });
+  });
+  headerBackBtn.addEventListener('click', () => goBack());
+
+  /* ---------- back navigation (header button + phone back gesture) ---------- */
+  function pushBackState(){
+    try{ history.pushState({ jechootaNav:true }, '', location.href); }catch(e){}
+  }
+  function goBack(){
+    const studyCardVisible = !document.getElementById('studyCard').classList.contains('hidden');
+    const studyDoneVisible = !document.getElementById('studyDone').classList.contains('hidden');
+    const quizPlayVisible = !document.getElementById('quizPlay').classList.contains('hidden');
+    const quizResultVisible = !document.getElementById('quizResult').classList.contains('hidden');
+    if(activeTab === 'study' && (studyCardVisible || studyDoneVisible)){
+      document.getElementById('backBtn').click();
+    } else if(activeTab === 'quiz' && (quizPlayVisible || quizResultVisible)){
+      document.getElementById('quizBackBtn').click();
+    } else if(activeTab !== 'study'){
+      goToTab('study');
+    }
+  }
+  window.addEventListener('popstate', () => {
+    goBack();
+    pushBackState();
+  });
+  pushBackState();
+
+  /* =========================================================
+     STUDY (flashcards)
+  ========================================================= */
+  let currentSet = null, queue = [], missedIds = new Set(), idx = 0, direction = 'eo', flipped = false;
+  let frontSpeak = { text:'', lang:'en-US' }, backSpeak = { text:'', lang:'om-ET' };
+  const setGrid = document.getElementById('setGrid');
+
+  function renderStudyHome(){
+    setGrid.innerHTML = '';
+    const allWords = VOCAB;
+    const allKnown = allWords.filter(v => knownIds.has(v.id)).length;
+    const allCard = document.createElement('button');
+    allCard.className = 'set-card all';
+    allCard.innerHTML = `<span class="n">All words</span><span class="d">${allKnown} / ${allWords.length} learned</span>
+      <div class="bar"><i style="width:${(allKnown/allWords.length*100).toFixed(0)}%"></i></div>`;
+    allCard.onclick = () => startStudySet('all');
+    setGrid.appendChild(allCard);
+    const todayNum = currentDayNumber();
+    SETS.forEach(n => {
+      const words = wordsForSet(n);
+      const known = words.filter(v => knownIds.has(v.id)).length;
+      const done = isDayDone(n);
+      const card = document.createElement('button');
+      card.className = 'set-card' + (n === todayNum ? ' today' : '');
+      card.innerHTML = `<span class="n">Day ${n}${n === todayNum ? ' <em class="today-badge">Today</em>' : ''}</span>
+        <span class="d">${known} / ${words.length} learned</span>
+        <div class="bar"><i style="width:${(known/words.length*100).toFixed(0)}%"></i></div>
+        <span class="day-check ${done ? 'done' : ''}" data-day="${n}">${done ? '\u2713 Done today' : 'Mark day done'}</span>`;
+      card.onclick = () => startStudySet(n);
+      card.querySelector('.day-check').addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleDayDone(n);
+        renderStudyHome();
+      });
+      setGrid.appendChild(card);
+    });
+  }
+
+  function startStudySet(setNum, customQueue){
+    currentSet = setNum;
+    queue = customQueue || shuffle(wordsForSet(setNum));
+    missedIds = new Set(); idx = 0; flipped = false;
+    document.getElementById('studyHome').classList.add('hidden');
+    document.getElementById('studyDone').classList.add('hidden');
+    document.getElementById('studyCard').classList.remove('hidden');
+    renderCard();
+    pushBackState();
+  }
+  function currentLabelSet(s){ return s === 'all' ? 'All words' : ('Day ' + s); }
+  function renderCard(){
+    if(idx >= queue.length){ showDone(); return; }
+    const item = queue[idx];
+    flipped = false;
+    document.getElementById('flashCard').classList.remove('flipped');
+    const enLabel = document.getElementById('frontLabel'), omLabel = document.getElementById('backLabel');
+    const frontWord = document.getElementById('frontWord'), backWord = document.getElementById('backWord');
+    if(direction === 'eo'){
+      enLabel.textContent = 'ENGLISH'; omLabel.textContent = 'AFAAN OROMOO';
+      frontWord.textContent = item.en; backWord.textContent = item.om;
+      frontSpeak = { text:item.en, lang:'en-US' }; backSpeak = { text:item.om, lang:'om-ET' };
+    } else {
+      enLabel.textContent = 'AFAAN OROMOO'; omLabel.textContent = 'ENGLISH';
+      frontWord.textContent = item.om; backWord.textContent = item.en;
+      frontSpeak = { text:item.om, lang:'om-ET' }; backSpeak = { text:item.en, lang:'en-US' };
+    }
+    document.getElementById('tapHint').textContent = `${idx+1} of ${queue.length} — ${currentLabelSet(currentSet)}`;
+    document.getElementById('countLabel').textContent = `${idx+1}/${queue.length}`;
+    document.getElementById('progressFill').style.width = `${(idx/queue.length*100).toFixed(1)}%`;
+  }
+  function showDone(){
+    document.getElementById('studyCard').classList.add('hidden');
+    document.getElementById('studyDone').classList.remove('hidden');
+    const missedCount = missedIds.size;
+    document.getElementById('doneTitle').textContent = missedCount ? 'Set finished' : 'Nailed it';
+    document.getElementById('doneSub').textContent = missedCount
+      ? `You marked ${missedCount} card${missedCount===1?'':'s'} as still learning.`
+      : 'Every card for this day is marked as known.';
+    document.getElementById('reviewMissedBtn').classList.toggle('hidden', missedCount === 0);
+  }
+  document.getElementById('flashCard').addEventListener('click', () => {
+    flipped = !flipped;
+    document.getElementById('flashCard').classList.toggle('flipped', flipped);
+  });
+  document.getElementById('frontSpeakBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    speak(frontSpeak.text, frontSpeak.lang);
+  });
+  document.getElementById('backSpeakBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    speak(backSpeak.text, backSpeak.lang);
+  });
+  document.getElementById('gotItBtn').addEventListener('click', () => {
+    const item = queue[idx]; knownIds.add(item.id); missedIds.delete(item.id); saveKnown();
+    idx++; renderCard();
+  });
+  document.getElementById('againBtn').addEventListener('click', () => {
+    const item = queue[idx]; knownIds.delete(item.id); missedIds.add(item.id); saveKnown();
+    idx++; renderCard();
+  });
+  document.getElementById('shuffleBtn').addEventListener('click', () => {
+    queue = shuffle(queue.slice(idx)); idx = 0; renderCard();
+  });
+  document.getElementById('backBtn').addEventListener('click', () => {
+    document.getElementById('studyCard').classList.add('hidden');
+    document.getElementById('studyDone').classList.add('hidden');
+    document.getElementById('studyHome').classList.remove('hidden');
+    renderStudyHome();
+  });
+  document.getElementById('toHomeBtn').addEventListener('click', () => {
+    document.getElementById('studyDone').classList.add('hidden');
+    document.getElementById('studyHome').classList.remove('hidden');
+    renderStudyHome();
+  });
+  document.getElementById('restartSetBtn').addEventListener('click', () => startStudySet(currentSet));
+  document.getElementById('reviewMissedBtn').addEventListener('click', () => {
+    const missedWords = VOCAB.filter(v => missedIds.has(v.id));
+    startStudySet(currentSet, shuffle(missedWords));
+  });
+  document.getElementById('dirEO').addEventListener('click', () => {
+    direction = 'eo';
+    document.getElementById('dirEO').classList.add('active');
+    document.getElementById('dirOE').classList.remove('active');
+    renderCard();
+  });
+  document.getElementById('dirOE').addEventListener('click', () => {
+    direction = 'oe';
+    document.getElementById('dirOE').classList.add('active');
+    document.getElementById('dirEO').classList.remove('active');
+    renderCard();
+  });
+
+  /* =========================================================
+     DICTIONARY
+  ========================================================= */
+  let dictFilterSet = 'all';
+  const dictChips = document.getElementById('dictChips');
+  const dictList = document.getElementById('dictList');
+  const dictSearch = document.getElementById('dictSearch');
+
+  function renderDictChips(){
+    dictChips.innerHTML = '';
+    const mk = (label, val) => {
+      const c = document.createElement('button');
+      c.className = 'chip' + (dictFilterSet === val ? ' active' : '');
+      c.textContent = label;
+      c.onclick = () => { dictFilterSet = val; renderDictChips(); renderDict(); };
+      return c;
+    };
+    dictChips.appendChild(mk('All', 'all'));
+    SETS.forEach(n => dictChips.appendChild(mk('Day ' + n, n)));
+  }
+  function renderDict(){
+    const term = dictSearch.value.trim().toLowerCase();
+    let words = wordsForSet(dictFilterSet);
+    if(term){
+      words = words.filter(v => v.en.toLowerCase().includes(term) || v.om.toLowerCase().includes(term));
+    }
+    words = words.slice().sort((a,b) => a.en.localeCompare(b.en));
+    dictList.innerHTML = '';
+    if(words.length === 0){
+      dictList.innerHTML = '<div class="empty-note">No matching words.</div>';
+      return;
+    }
+    words.forEach(v => {
+      const row = document.createElement('div');
+      row.className = 'dict-row';
+      row.innerHTML = `<div>
+          <div class="en">${escapeHtml(v.en)} <button class="speak-btn en-speak" aria-label="Pronounce in English">${SPEAK_ICON}</button></div>
+          <div class="om">${escapeHtml(v.om)} <button class="speak-btn om-speak" aria-label="Pronounce in Oromo">${SPEAK_ICON}</button></div>
+        </div>
+        <div class="known-dot ${knownIds.has(v.id) ? 'on' : ''}" data-id="${v.id}" title="Tap to toggle known"></div>`;
+      row.querySelector('.known-dot').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if(knownIds.has(v.id)) knownIds.delete(v.id); else knownIds.add(v.id);
+        saveKnown();
+        renderDict();
+      });
+      row.querySelector('.en-speak').addEventListener('click', (e) => {
+        e.stopPropagation();
+        speak(v.en, 'en-US');
+      });
+      row.querySelector('.om-speak').addEventListener('click', (e) => {
+        e.stopPropagation();
+        speak(v.om, 'om-ET');
+      });
+      dictList.appendChild(row);
+    });
+  }
+  function escapeHtml(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  dictSearch.addEventListener('input', renderDict);
+
+  /* =========================================================
+     QUIZ
+  ========================================================= */
+  const quizSetGrid = document.getElementById('quizSetGrid');
+  let quizDirection = 'eo';
+  let quizQueue = [], quizIdx = 0, quizScore = 0, quizSetKey = 'all';
+
+  document.getElementById('quizModeToggle').textContent = 'Direction: EN → OM (tap to switch)';
+  document.getElementById('quizModeToggle').addEventListener('click', () => {
+    quizDirection = quizDirection === 'eo' ? 'oe' : 'eo';
+    document.getElementById('quizModeToggle').textContent =
+      quizDirection === 'eo' ? 'Direction: EN → OM (tap to switch)' : 'Direction: OM → EN (tap to switch)';
+  });
+
+  function renderQuizSetup(){
+    quizSetGrid.innerHTML = '';
+    const mk = (label, val, words) => {
+      const card = document.createElement('button');
+      card.className = 'set-card' + (val === 'all' ? ' all' : '');
+      card.innerHTML = `<span class="n">${label}</span><span class="d">${words.length} words</span>`;
+      card.onclick = () => startQuiz(val);
+      return card;
+    };
+    quizSetGrid.appendChild(mk('All words', 'all', VOCAB));
+    SETS.forEach(n => quizSetGrid.appendChild(mk('Day ' + n, n, wordsForSet(n))));
+  }
+
+  function startQuiz(setKey){
+    quizSetKey = setKey;
+    const pool = wordsForSet(setKey);
+    const count = Math.min(15, pool.length);
+    quizQueue = shuffle(pool).slice(0, count);
+    quizIdx = 0; quizScore = 0;
+    document.getElementById('quizSetup').classList.add('hidden');
+    document.getElementById('quizResult').classList.add('hidden');
+    document.getElementById('quizPlay').classList.remove('hidden');
+    renderQuizQ();
+    pushBackState();
+  }
+
+  function renderQuizQ(){
+    if(quizIdx >= quizQueue.length){ endQuiz(); return; }
+    const item = quizQueue[quizIdx];
+    const askEn = quizDirection === 'eo';
+    document.getElementById('quizEyebrow').textContent = askEn ? 'WHAT DOES THIS MEAN IN AFAAN OROMOO?' : 'WHAT DOES THIS MEAN IN ENGLISH?';
+    document.getElementById('quizWord').textContent = askEn ? item.en : item.om;
+
+    const pool = wordsForSet(quizSetKey).filter(v => v.id !== item.id);
+    const distractors = shuffle(pool).slice(0, 3);
+    const correctAns = askEn ? item.om : item.en;
+    const options = shuffle([correctAns, ...distractors.map(d => askEn ? d.om : d.en)]);
+
+    const choicesWrap = document.getElementById('quizChoices');
+    choicesWrap.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-choice';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-choice').forEach(b => b.disabled = true);
+        const isCorrect = opt === correctAns;
+        if(isCorrect){ btn.classList.add('correct'); quizScore++; }
+        else {
+          btn.classList.add('wrong');
+          document.querySelectorAll('.quiz-choice').forEach(b => { if(b.textContent === correctAns) b.classList.add('correct'); });
+        }
+        setTimeout(() => { quizIdx++; renderQuizQ(); }, 700);
+      });
+      choicesWrap.appendChild(btn);
+    });
+    document.getElementById('quizCountLabel').textContent = `${quizIdx+1}/${quizQueue.length}`;
+    document.getElementById('quizProgressFill').style.width = `${(quizIdx/quizQueue.length*100).toFixed(1)}%`;
+  }
+
+  async function endQuiz(){
+    document.getElementById('quizPlay').classList.add('hidden');
+    document.getElementById('quizResult').classList.remove('hidden');
+    document.getElementById('quizScoreNum').textContent = `${quizScore}/${quizQueue.length}`;
+    const pct = Math.round((quizScore / quizQueue.length) * 100);
+    document.getElementById('quizScoreNote').textContent =
+      pct === 100 ? 'Perfect score!' : pct >= 70 ? 'Solid work.' : 'Keep practicing — you\'ll get there.';
+    const prevBest = bestQuiz[quizSetKey];
+    if(!prevBest || quizScore > prevBest.score || (quizScore === prevBest.score && quizQueue.length > prevBest.total)){
+      bestQuiz[quizSetKey] = { score: quizScore, total: quizQueue.length };
+      await saveQuiz();
+    }
+  }
+  document.getElementById('quizBackBtn').addEventListener('click', () => {
+    document.getElementById('quizPlay').classList.add('hidden');
+    document.getElementById('quizSetup').classList.remove('hidden');
+  });
+  document.getElementById('quizRetryBtn').addEventListener('click', () => startQuiz(quizSetKey));
+  document.getElementById('quizToSetupBtn').addEventListener('click', () => {
+    document.getElementById('quizResult').classList.add('hidden');
+    document.getElementById('quizSetup').classList.remove('hidden');
+  });
+
+  /* =========================================================
+     PROFILE
+  ========================================================= */
+  function renderProfile(){
+    const totalKnown = VOCAB.filter(v => knownIds.has(v.id)).length;
+    document.getElementById('statKnown').textContent = totalKnown;
+    document.getElementById('statTotal').textContent = VOCAB.length;
+    const setsMastered = SETS.filter(n => wordsForSet(n).every(v => knownIds.has(v.id))).length;
+    document.getElementById('statSets').textContent = setsMastered;
+    const overallBest = bestQuiz['all'];
+    document.getElementById('statQuiz').textContent = overallBest ? `${overallBest.score}/${overallBest.total}` : '—';
+    document.getElementById('statDaysDone').textContent = Object.keys(daysDone).length;
+
+    const list = document.getElementById('profileSetList');
+    list.innerHTML = '';
+    SETS.forEach(n => {
+      const words = wordsForSet(n);
+      const known = words.filter(v => knownIds.has(v.id)).length;
+      const row = document.createElement('div');
+      row.className = 'profile-row';
+      row.innerHTML = `<span class="lbl">Day ${n}</span><span class="val">${known} / ${words.length} learned</span>`;
+      list.appendChild(row);
+    });
+  }
+  document.getElementById('resetBtn').addEventListener('click', async () => {
+    if(!confirm('Clear all learning progress and quiz scores?')) return;
+    knownIds = new Set(); bestQuiz = {};
+    await saveKnown(); await saveQuiz();
+    renderStudyHome(); renderProfile();
+  });
+
+  /* ---------- init ---------- */
+  loadAll().then(() => {
+    renderStudyHome();
+    renderDictChips();
+  });
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  }
+})();
+</script>
+<script>
+(function(){
+  const splash=document.getElementById('splashScreen');
+  if(!splash) return;
+  const hide=()=>setTimeout(()=>splash.classList.add('hide'),900);
+  if(document.readyState==='complete') hide();
+  else window.addEventListener('load',hide,{once:true});
+})();
+</script>
+<script>
+(function(){
+  const CODES = ['4894','1324','3546','5768','7980'];
+  const DB_URL = 'https://rashedin-basic-vocabularies-default-rtdb.firebaseio.com';
+  const INDEX_PATH = '/rashedin_unlock/next_index.json';
+  const UNLOCK_KEY = 'rashedin_unlocked_v1';
+  const app = document.getElementById('app');
+  const lockScreen = document.getElementById('lockScreen');
+  const lockInput = document.getElementById('lockInput');
+  const lockSubmit = document.getElementById('lockSubmit');
+  const lockError = document.getElementById('lockError');
+
+  function showApp(){
+    lockScreen.classList.add('hidden');
+    app.style.display = '';
+  }
+  function showLock(){
+    lockScreen.classList.remove('hidden');
+    setTimeout(() => lockInput.focus(), 300);
+  }
+
+  let unlocked = false;
+  try { unlocked = localStorage.getItem(UNLOCK_KEY) === '1'; } catch(e){}
+
+  function reveal(){
+    if(unlocked) showApp();
+    else showLock();
+  }
+  if(document.readyState === 'complete') setTimeout(reveal, 950);
+  else window.addEventListener('load', () => setTimeout(reveal, 950), { once:true });
+
+  function unlockThisDevice(){
+    try { localStorage.setItem(UNLOCK_KEY, '1'); } catch(e){}
+    lockError.textContent = '';
+    showApp();
+  }
+  function fail(){
+    lockError.textContent = 'Incorrect code, try again.';
+    lockInput.value = '';
+    lockInput.focus();
+  }
+
+  async function tryUnlock(){
+    const entered = lockInput.value.trim();
+    if(!CODES.includes(entered)){ fail(); return; }
+
+    lockSubmit.disabled = true;
+    try {
+      // Ask the shared database which code slot is currently active.
+      const getRes = await fetch(DB_URL + INDEX_PATH, { cache: 'no-store' });
+      if(!getRes.ok) throw new Error('read failed');
+      const raw = await getRes.json();
+      const currentIndex = (typeof raw === 'number' && raw >= 0 && raw < CODES.length) ? raw : 0;
+
+      if(entered === CODES[currentIndex]){
+        const nextIndex = (currentIndex + 1) % CODES.length;
+        // Advance the shared pointer so the next device needs the next code.
+        await fetch(DB_URL + INDEX_PATH, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(nextIndex)
+        }).catch(()=>{});
+        unlockThisDevice();
+      } else {
+        fail();
+      }
+    } catch(e){
+      // No internet reachable right now — fall back to accepting any of the 5 codes
+      // so a genuinely offline device isn't locked out. The strict rotation just
+      // won't advance for this particular unlock.
+      if(CODES.includes(entered)) unlockThisDevice();
+      else fail();
+    } finally {
+      lockSubmit.disabled = false;
+    }
+  }
+  lockSubmit.addEventListener('click', tryUnlock);
+  lockInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') tryUnlock(); });
+})();
+</script>
+
+<script>
+(function(){
+  const DB_URL = 'https://rashedin-basic-vocabularies-default-rtdb.firebaseio.com';
+  const PATH = '/top_students.json';
+  const CACHE_KEY = 'rashedin_top_students_cache';
+  const ADMIN_CODE = '4894Duresa';
+  const MAX_DIM = 300; // resized photo max width/height in px
+
+  const tsScroll = document.getElementById('tsScroll');
+  const tsAddLink = document.getElementById('tsAddLink');
+  const codeModal = document.getElementById('tsCodeModal');
+  const codeInput = document.getElementById('tsCodeInput');
+  const codeErr = document.getElementById('tsCodeErr');
+  const codeSubmit = document.getElementById('tsCodeSubmit');
+  const codeCancel = document.getElementById('tsCodeCancel');
+  const formModal = document.getElementById('tsFormModal');
+  const nameInput = document.getElementById('tsNameInput');
+  const noteInput = document.getElementById('tsNoteInput');
+  const photoInput = document.getElementById('tsPhotoInput');
+  const formErr = document.getElementById('tsFormErr');
+  const formSubmit = document.getElementById('tsFormSubmit');
+  const formCancel = document.getElementById('tsFormCancel');
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function initials(name){
+    return (name || '?').trim().split(/\s+/).slice(0,2).map(w => w[0] ? w[0].toUpperCase() : '').join('') || '?';
+  }
+
+  // Swap a broken photo for an initials badge instead of a broken-image icon.
+  window.__tsImgError = function(el){
+    const card = el.closest('.ts-card');
+    const name = card ? card.dataset.name : '';
+    const fallback = document.createElement('div');
+    fallback.className = 'ts-fallback';
+    fallback.textContent = initials(name);
+    el.replaceWith(fallback);
+  };
+
+  function render(list){
+    if(!list || !list.length){
+      tsScroll.innerHTML = '<div class="ts-empty">No top students posted yet.</div>';
+      return;
+    }
+    // newest first
+    list.sort((a,b) => (b.ts||0) - (a.ts||0));
+    tsScroll.innerHTML = list.map(s => {
+      const name = s.name || '';
+      const hasPhoto = typeof s.photo === 'string' && s.photo.indexOf('data:image') === 0;
+      const img = hasPhoto
+        ? `<img src="${s.photo}" alt="${escapeHtml(name || 'Top student')}" onerror="window.__tsImgError(this)">`
+        : `<div class="ts-fallback">${escapeHtml(initials(name))}</div>`;
+      return `
+      <div class="ts-card" data-name="${escapeHtml(name)}">
+        ${img}
+        <div class="ts-name">${escapeHtml(name)}</div>
+        <div class="ts-note">${escapeHtml(s.note || '')}</div>
+      </div>
+    `;
+    }).join('');
+  }
+
+  // Show cached list instantly (works fully offline), then refresh from the
+  // shared database in the background if a connection is available.
+  try {
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if(cached) render(cached);
+  } catch(e){}
+
+  fetch(DB_URL + PATH, { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null)
+    .then(data => {
+      if(!data) return;
+      const list = Object.values(data);
+      render(list);
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify(list)); } catch(e){}
+    })
+    .catch(()=>{ /* offline — cached list (if any) stays shown */ });
+
+  function openCodeModal(){
+    codeInput.value = '';
+    codeErr.textContent = '';
+    codeModal.classList.remove('hidden');
+    setTimeout(() => codeInput.focus(), 100);
+  }
+  function closeCodeModal(){ codeModal.classList.add('hidden'); }
+  function openFormModal(){
+    nameInput.value = '';
+    noteInput.value = '';
+    photoInput.value = '';
+    formErr.textContent = '';
+    formModal.classList.remove('hidden');
+  }
+  function closeFormModal(){ formModal.classList.add('hidden'); }
+  // Let the self-qualification quiz open this same form once someone passes.
+  window.__tsOpenForm = openFormModal;
+
+  tsAddLink.addEventListener('click', openCodeModal);
+  codeCancel.addEventListener('click', closeCodeModal);
+  formCancel.addEventListener('click', closeFormModal);
+
+  codeSubmit.addEventListener('click', () => {
+    if(codeInput.value.trim() === ADMIN_CODE){
+      closeCodeModal();
+      openFormModal();
+    } else {
+      codeErr.textContent = 'Incorrect code.';
+    }
+  });
+  codeInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') codeSubmit.click(); });
+
+  function resizeImage(file){
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject(new Error('Could not read that photo file.'));
+      reader.onload = () => {
+        const img = new Image();
+        img.onerror = () => reject(new Error('That photo could not be opened. Try a different one.'));
+        img.onload = () => {
+          try {
+            let w = img.width, h = img.height;
+            if(!w || !h) throw new Error('bad dimensions');
+            if(w > h){ if(w > MAX_DIM){ h = Math.round(h * MAX_DIM / w); w = MAX_DIM; } }
+            else { if(h > MAX_DIM){ w = Math.round(w * MAX_DIM / h); h = MAX_DIM; } }
+            const canvas = document.createElement('canvas');
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.72);
+            if(!dataUrl || dataUrl.indexOf('data:image') !== 0 || dataUrl.length < 100){
+              reject(new Error('The photo could not be processed. Try a different one.'));
+              return;
+            }
+            resolve(dataUrl);
+          } catch(err){
+            reject(new Error('The photo could not be processed. Try a different one.'));
+          }
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  formSubmit.addEventListener('click', async () => {
+    const name = nameInput.value.trim();
+    const note = noteInput.value.trim();
+    const file = photoInput.files[0];
+    if(!name){ formErr.textContent = 'Please enter a name.'; return; }
+    if(!file){ formErr.textContent = 'Please choose a photo.'; return; }
+    if(file.size > 20 * 1024 * 1024){ formErr.textContent = 'That photo is too large — please choose a smaller one.'; return; }
+
+    formSubmit.disabled = true;
+    formErr.textContent = 'Processing photo…';
+    try {
+      const photo = await resizeImage(file);
+      formErr.textContent = 'Uploading…';
+      const res = await fetch(DB_URL + PATH, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, note, photo, ts: Date.now() })
+      });
+      if(!res.ok) throw new Error('Upload failed (server rejected it).');
+      // Refresh the list from the server so it appears right away.
+      const listRes = await fetch(DB_URL + PATH, { cache: 'no-store' });
+      const data = await listRes.json();
+      const list = data ? Object.values(data) : [];
+      render(list);
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify(list)); } catch(e){}
+      closeFormModal();
+    } catch(e){
+      formErr.textContent = (e && e.message) ? e.message : 'Could not upload — check your internet connection and try again.';
+    } finally {
+      formSubmit.disabled = false;
+    }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const ADMIN_CODE = '58445';
+  const CODES = ['4894','1324','3546','5768','7980'];
+  const DB_URL = 'https://rashedin-basic-vocabularies-default-rtdb.firebaseio.com';
+  const INDEX_PATH = '/rashedin_unlock/next_index.json';
+  const CACHE_KEY = 'rashedin_admin_next_index_cache';
+
+  const appRoot = document.getElementById('app');
+  const gateModal = document.getElementById('adminGateModal');
+  const gateInput = document.getElementById('adminGateInput');
+  const gateErr = document.getElementById('adminGateErr');
+  const gateSubmit = document.getElementById('adminGateSubmit');
+  const gateCancel = document.getElementById('adminGateCancel');
+  const panelModal = document.getElementById('adminPanelModal');
+  const nextCodeEl = document.getElementById('adminNextCode');
+  const nextNoteEl = document.getElementById('adminNextNote');
+  const refreshBtn = document.getElementById('adminRefreshBtn');
+  const panelClose = document.getElementById('adminPanelClose');
+
+  // Secret trigger: tap anywhere in the unlocked app 5 times quickly.
+  // Uses pointerdown (fires the instant a finger touches, no waiting for release)
+  // and a monotonic clock, so rapid consecutive taps are never dropped.
+  const TAP_WINDOW_MS = 3000;
+  let tapCount = 0, lastTapAt = 0;
+  document.addEventListener('pointerdown', (e) => {
+    if(!appRoot.contains(e.target)) return;
+    const now = performance.now();
+    if(now - lastTapAt > TAP_WINDOW_MS) tapCount = 0;
+    lastTapAt = now;
+    tapCount++;
+    if(tapCount === 1) prefetchIndex();   // start loading the next code right away
+    if(tapCount >= 5){
+      tapCount = 0;
+      openGate();
+    }
+  }, true);
+
+  function openGate(){
+    gateInput.value = '';
+    gateErr.textContent = '';
+    gateModal.classList.remove('hidden');
+    setTimeout(() => gateInput.focus(), 100);
+  }
+  function closeGate(){ gateModal.classList.add('hidden'); }
+  gateCancel.addEventListener('click', closeGate);
+  gateSubmit.addEventListener('click', () => {
+    if(gateInput.value.trim() === ADMIN_CODE){
+      closeGate();
+      openPanel();
+    } else {
+      gateErr.textContent = 'Incorrect code.';
+    }
+  });
+  gateInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') gateSubmit.click(); });
+
+  function showCached(){
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if(cached && typeof cached.index === 'number'){
+        nextCodeEl.textContent = CODES[cached.index] || '?';
+        const when = new Date(cached.at);
+        nextNoteEl.textContent = 'Last checked ' + when.toLocaleString() + ' — may be out of date if someone else has unlocked since then.';
+        return true;
+      }
+    } catch(e){}
+    nextCodeEl.textContent = '?';
+    nextNoteEl.textContent = 'No internet yet, and nothing checked before — connect once to find out.';
+    return false;
+  }
+
+  async function refreshFromServer(){
+    nextNoteEl.textContent = 'Checking…';
+    try {
+      const res = await fetch(DB_URL + INDEX_PATH, { cache: 'no-store' });
+      if(!res.ok) throw new Error('failed');
+      const raw = await res.json();
+      const index = (typeof raw === 'number' && raw >= 0 && raw < CODES.length) ? raw : 0;
+      nextCodeEl.textContent = CODES[index];
+      const now = Date.now();
+      nextNoteEl.textContent = 'Checked just now (' + new Date(now).toLocaleTimeString() + ').';
+      try { localStorage.setItem(CACHE_KEY, JSON.stringify({ index, at: now })); } catch(e){}
+    } catch(e){
+      showCached();
+      nextNoteEl.textContent += ' (no internet right now, showing last known value)';
+    }
+  }
+
+  // Quietly fetch the current index and store it, so the panel can show it instantly.
+  async function prefetchIndex(){
+    try {
+      const res = await fetch(DB_URL + INDEX_PATH, { cache: 'no-store' });
+      if(!res.ok) return;
+      const raw = await res.json();
+      const index = (typeof raw === 'number' && raw >= 0 && raw < CODES.length) ? raw : 0;
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ index, at: Date.now() }));
+    } catch(e){}
+  }
+
+  function openPanel(){
+    panelModal.classList.remove('hidden');
+    showCached();
+    refreshFromServer();
+  }
+  function closePanel(){ panelModal.classList.add('hidden'); }
+  panelClose.addEventListener('click', closePanel);
+  refreshBtn.addEventListener('click', refreshFromServer);
+})();
+</script>
+
+<script>
+(function(){
+  const PASS_SCORE = 45;
+  const TOTAL_Q = 50;
+  const VOCAB = JSON.parse(document.getElementById('vocab-data').textContent);
+
+  function shuffle(arr){
+    const a = arr.slice();
+    for(let i = a.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  const qualifyLink = document.getElementById('qualifyLink');
+  const introModal = document.getElementById('qualifyIntroModal');
+  const introCancel = document.getElementById('qualifyIntroCancel');
+  const startBtn = document.getElementById('qualifyStartBtn');
+  const quizModal = document.getElementById('qualifyQuizModal');
+  const progressLabel = document.getElementById('qualifyProgressLabel');
+  const wordEl = document.getElementById('qualifyWord');
+  const choicesEl = document.getElementById('qualifyChoices');
+  const resultModal = document.getElementById('qualifyResultModal');
+  const resultTitle = document.getElementById('qualifyResultTitle');
+  const resultScore = document.getElementById('qualifyResultScore');
+  const resultNote = document.getElementById('qualifyResultNote');
+  const continueBtn = document.getElementById('qualifyContinueBtn');
+  const resultClose = document.getElementById('qualifyResultClose');
+
+  let queue = [], idx = 0, score = 0, passed = false;
+
+  qualifyLink.addEventListener('click', () => introModal.classList.remove('hidden'));
+  introCancel.addEventListener('click', () => introModal.classList.add('hidden'));
+
+  startBtn.addEventListener('click', () => {
+    introModal.classList.add('hidden');
+    const count = Math.min(TOTAL_Q, VOCAB.length);
+    queue = shuffle(VOCAB).slice(0, count);
+    idx = 0; score = 0;
+    quizModal.classList.remove('hidden');
+    renderQuestion();
+  });
+
+  function renderQuestion(){
+    if(idx >= queue.length){ finish(); return; }
+    const item = queue[idx];
+    progressLabel.textContent = `${idx+1}/${queue.length}`;
+    wordEl.textContent = item.en;
+
+    const pool = VOCAB.filter(v => v.id !== item.id);
+    const distractors = shuffle(pool).slice(0, 3);
+    const correctAns = item.om;
+    const options = shuffle([correctAns, ...distractors.map(d => d.om)]);
+
+    choicesEl.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'qualify-choice';
+      btn.textContent = opt;
+      btn.addEventListener('click', () => {
+        choicesEl.querySelectorAll('.qualify-choice').forEach(b => b.disabled = true);
+        const isCorrect = opt === correctAns;
+        if(isCorrect){ btn.classList.add('correct'); score++; }
+        else {
+          btn.classList.add('wrong');
+          choicesEl.querySelectorAll('.qualify-choice').forEach(b => { if(b.textContent === correctAns) b.classList.add('correct'); });
+        }
+        setTimeout(() => { idx++; renderQuestion(); }, 500);
+      });
+      choicesEl.appendChild(btn);
+    });
+  }
+
+  function finish(){
+    quizModal.classList.add('hidden');
+    resultModal.classList.remove('hidden');
+    resultScore.textContent = `${score}/${queue.length}`;
+    passed = score >= PASS_SCORE;
+    if(passed){
+      resultTitle.textContent = 'You qualified!';
+      resultNote.textContent = `You need ${PASS_SCORE}/${queue.length} to qualify — nice work. Continue to post yourself to the Top Students list.`;
+      continueBtn.textContent = 'Post myself as a Top Student';
+      continueBtn.classList.remove('hidden');
+    } else {
+      resultTitle.textContent = 'Not quite yet';
+      resultNote.textContent = `You need ${PASS_SCORE}/${queue.length} to qualify. Keep studying and try again.`;
+      continueBtn.textContent = 'Try again';
+      continueBtn.classList.remove('hidden');
+    }
+  }
+
+  continueBtn.addEventListener('click', () => {
+    resultModal.classList.add('hidden');
+    if(passed && window.__tsOpenForm){
+      window.__tsOpenForm();
+    } else if(!passed){
+      introModal.classList.remove('hidden');
+    }
+  });
+  resultClose.addEventListener('click', () => resultModal.classList.add('hidden'));
+})();
+</script>
+</body>
+</html>
