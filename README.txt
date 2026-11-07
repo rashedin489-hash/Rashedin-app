@@ -8,3 +8,4 @@ Install:
 3. Choose “Install app” / “Add to Home screen”.
 
 The app works offline after the service worker has cached its files.
+v22
